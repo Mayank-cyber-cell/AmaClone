@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Orders - AmaClone</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <a href="index.html">AmaClone</a>
+                    </div>
+                    
+                    <div class="location-selector">
+                        <span class="location-icon">📍</span>
+                        <div class="location-text">
+                            <span class="deliver-to">Deliver to</span>
+                            <span class="location-name">New York 10001</span>
+                        </div>
+                    </div>
+                    
+                    <div class="search-bar">
+                        <select class="category-selector">
+                            <option>All</option>
+                            <option>Electronics</option>
+                            <option>Fashion</option>
+                            <option>Home</option>
+                            <option>Books</option>
+                        </select>
+                        <input type="text" placeholder="Search products...">
+                        <button type="submit" class="search-btn">🔍</button>
+                    </div>
+                    
+                    <div class="header-actions">
+                        <a href="login.html" class="account-menu">
+                            <span class="greeting">Hello, John</span>
+                            <span class="account-text">Account & Lists</span>
+                        </a>
+                        
+                        <a href="orders.html" class="orders-link active">
+                            <span class="returns">Returns</span>
+                            <span class="orders">& Orders</span>
+                        </a>
+                        
+                        <a href="cart.html" class="cart-link">
+                            <div class="cart-icon">
+                                🛒
+                                <span class="cart-count">0</span>
+                            </div>
+                            <span class="cart-text">Cart</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="header-nav">
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-link">📱 All</a></li>
+                    <li><a href="category.html" class="nav-link">Today's Deals</a></li>
+                    <li><a href="category.html" class="nav-link">Customer Service</a></li>
+                    <li><a href="category.html" class="nav-link">Registry</a></li>
+                    <li><a href="category.html" class="nav-link">Gift Cards</a></li>
+                    <li><a href="seller-dashboard.html" class="nav-link">Sell</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="orders-page">
+        <div class="container">
+            <div class="orders-header">
+                <h1>Your Orders</h1>
+                <div class="orders-filter">
+                    <button class="filter-btn active" onclick="filterOrders('all')">All Orders</button>
+                    <button class="filter-btn" onclick="filterOrders('delivered')">Delivered</button>
+                    <button class="filter-btn" onclick="filterOrders('shipped')">Shipped</button>
+                    <button class="filter-btn" onclick="filterOrders('pending')">Pending</button>
+                </div>
+            </div>
+            
+            <div class="orders-search">
+                <input type="text" placeholder="Search your orders" class="search-orders">
+                <button class="search-orders-btn">Search orders</button>
+            </div>
+            
+            <div class="orders-list">
+                <!-- Order 1 -->
+                <div class="order-card" data-status="delivered">
+                    <div class="order-header">
+                        <div class="order-info">
+                            <div class="order-detail">
+                                <span class="label">ORDER PLACED</span>
+                                <span class="value">January 20, 2025</span>
+                            </div>
+                            <div class="order-detail">
+                                <span class="label">TOTAL</span>
+                                <span class="value">$379.98</span>
+                            </div>
+                            <div class="order-detail">
+                                <span class="label">SHIP TO</span>
+                                <span class="value">John Doe</span>
+                            </div>
+                        </div>
+                        <div class="order-actions">
+                            <span class="order-number">ORDER # 123-4567890-1234567</span>
+                            <div class="order-links">
+                                <a href="#" class="order-link">View order details</a> |
+                                <a href="#" class="order-link">Invoice</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="order-status delivered">
+                        <span class="status-text">✅ Delivered January 22, 2025</span>
+                    </div>
+                    
+                    <div class="order-items">
+                        <div class="order-item">
+                            <img src="https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?auto=compress&cs=tinysrgb&w=150" alt="Wireless Bluetooth Headphones">
+                            <div class="item-details">
+                                <h3><a href="product.html">Wireless Bluetooth Headphones</a></h3>
+                                <p>Quantity: 1</p>
+                                <div class="item-actions">
+                                    <button class="action-btn" onclick="reorder()">Buy it again</button>
+                                    <button class="action-btn" onclick="writeReview()">Write a product review</button>
+                                    <button class="action-btn" onclick="returnItem()">Return item</button>
+                                </div>
+                            </div>
+                            <div class="tracking-info">
+                                <button class="track-btn" onclick="showTracking('123-4567890-1234567')">Track package</button>
+                            </div>
+                        </div>
+                        
+                        <div class="order-item">
+                            <img src="https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=150" alt="Smart Watch">
+                            <div class="item-details">
+                                <h3><a href="product.html">Smart Watch Series 8</a></h3>
+                                <p>Quantity: 1</p>
+                                <div class="item-actions">
+                                    <button class="action-btn" onclick="reorder()">Buy it again</button>
+                                    <button class="action-btn" onclick="writeReview()">Write a product review</button>
+                                    <button class="action-btn" onclick="returnItem()">Return item</button>
+                                </div>
+                            </div>
+                            <div class="tracking-info">
+                                <button class="track-btn" onclick="showTracking('123-4567890-1234567')">Track package</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Order 2 -->
+                <div class="order-card" data-status="shipped">
+                    <div class="order-header">
+                        <div class="order-info">
+                            <div class="order-detail">
+                                <span class="label">ORDER PLACED</span>
+                                <span class="value">January 25, 2025</span>
+                            </div>
+                            <div class="order-detail">
+                                <span class="label">TOTAL</span>
+                                <span class="value">$49.99</span>
+                            </div>
+                            <div class="order-detail">
+                                <span class="label">SHIP TO</span>
+                                <span class="value">John Doe</span>
+                            </div>
+                        </div>
+                        <div class="order-actions">
+                            <span class="order-number">ORDER # 123-4567890-2345678</span>
+                            <div class="order-links">
+                                <a href="#" class="order-link">View order details</a> |
+                                <a href="#" class="order-link">Invoice</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="order-status shipped">
+                        <span class="status-text">📦 Shipped - Arriving January 28, 2025</span>
+                    </div>
+                    
+                    <div class="order-items">
+                        <div class="order-item">
+                            <img src="https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=150" alt="Laptop Backpack">
+                            <div class="item-details">
+                                <h3><a href="product.html">Laptop Backpack</a></h3>
+                                <p>Quantity: 1</p>
+                            </div>
+                            <div class="tracking-info">
+                                <button class="track-btn" onclick="showTracking('123-4567890-2345678')">Track package</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Order 3 -->
+                <div class="order-card" data-status="pending">
+                    <div class="order-header">
+                        <div class="order-info">
+                            <div class="order-detail">
+                                <span class="label">ORDER PLACED</span>
+                                <span class="value">January 27, 2025</span>
+                            </div>
+                            <div class="order-detail">
+                                <span class="label">TOTAL</span>
+                                <span class="value">$149.99</span>
+                            </div>
+                            <div class="order-detail">
+                                <span class="label">SHIP TO</span>
+                                <span class="value">John Doe</span>
+                            </div>
+                        </div>
+                        <div class="order-actions">
+                            <span class="order-number">ORDER # 123-4567890-3456789</span>
+                            <div class="order-links">
+                                <a href="#" class="order-link">View order details</a> |
+                                <a href="#" class="order-link">Invoice</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="order-status pending">
+                        <span class="status-text">⏳ Order being prepared</span>
+                    </div>
+                    
+                    <div class="order-items">
+                        <div class="order-item">
+                            <img src="https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg?auto=compress&cs=tinysrgb&w=150" alt="Coffee Maker Pro">
+                            <div class="item-details">
+                                <h3><a href="product.html">Coffee Maker Pro</a></h3>
+                                <p>Quantity: 1</p>
+                            </div>
+                            <div class="tracking-info">
+                                <button class="action-btn" onclick="cancelOrder()">Cancel item</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Tracking Modal -->
+    <div id="tracking-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Track Your Package</h2>
+                <span class="close" onclick="closeTrackingModal()">&times;</span>
+            </div>
+            
+            <div class="tracking-details">
+                <div class="tracking-number">
+                    <strong>Tracking Number:</strong> <span id="tracking-id">1Z999AA1234567890</span>
+                </div>
+                
+                <div class="delivery-info">
+                    <p><strong>Expected Delivery:</strong> Tuesday, January 28, 2025</p>
+                    <p><strong>Carrier:</strong> UPS</p>
+                </div>
+                
+                <div class="tracking-timeline">
+                    <div class="timeline-item completed">
+                        <div class="timeline-icon">✅</div>
+                        <div class="timeline-content">
+                            <h4>Order Placed</h4>
+                            <p>January 25, 2025 at 2:30 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item completed">
+                        <div class="timeline-icon">✅</div>
+                        <div class="timeline-content">
+                            <h4>Order Processed</h4>
+                            <p>January 25, 2025 at 4:15 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item completed">
+                        <div class="timeline-icon">✅</div>
+                        <div class="timeline-content">
+                            <h4>Shipped</h4>
+                            <p>January 26, 2025 at 10:00 AM</p>
+                            <p>Package left warehouse facility</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item active">
+                        <div class="timeline-icon">📦</div>
+                        <div class="timeline-content">
+                            <h4>Out for Delivery</h4>
+                            <p>January 28, 2025 at 8:00 AM</p>
+                            <p>Package is on delivery truck</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item pending">
+                        <div class="timeline-icon">🏠</div>
+                        <div class="timeline-content">
+                            <h4>Delivered</h4>
+                            <p>Expected by 8:00 PM today</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-actions">
+                <button class="action-btn" onclick="contactCarrier()">Contact Carrier</button>
+                <button class="action-btn" onclick="reportProblem()">Report a Problem</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-columns">
+                    <div class="footer-column">
+                        <h4>Get to Know Us</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press Releases</a></li>
+                            <li><a href="#">Investor Relations</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Make Money with Us</h4>
+                        <ul>
+                            <li><a href="seller-dashboard.html">Sell Products</a></li>
+                            <li><a href="#">Become an Affiliate</a></li>
+                            <li><a href="#">Advertise Your Products</a></li>
+                            <li><a href="#">Self-Publish with Us</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Customer Service</h4>
+                        <ul>
+                            <li><a href="help.html">Help Center</a></li>
+                            <li><a href="#">Returns & Refunds</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="#">Shipping Info</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Connect with Us</h4>
+                        <ul>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">YouTube</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-links">
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+                <p>&copy; 2025 AmaClone. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

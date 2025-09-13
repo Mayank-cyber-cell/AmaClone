@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center - AmaClone</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <a href="index.html">AmaClone</a>
+                    </div>
+                    
+                    <div class="location-selector">
+                        <span class="location-icon">📍</span>
+                        <div class="location-text">
+                            <span class="deliver-to">Deliver to</span>
+                            <span class="location-name">New York 10001</span>
+                        </div>
+                    </div>
+                    
+                    <div class="search-bar">
+                        <select class="category-selector">
+                            <option>All</option>
+                            <option>Electronics</option>
+                            <option>Fashion</option>
+                            <option>Home</option>
+                            <option>Books</option>
+                        </select>
+                        <input type="text" placeholder="Search products...">
+                        <button type="submit" class="search-btn">🔍</button>
+                    </div>
+                    
+                    <div class="header-actions">
+                        <a href="login.html" class="account-menu">
+                            <span class="greeting">Hello, Sign in</span>
+                            <span class="account-text">Account & Lists</span>
+                        </a>
+                        
+                        <a href="orders.html" class="orders-link">
+                            <span class="returns">Returns</span>
+                            <span class="orders">& Orders</span>
+                        </a>
+                        
+                        <a href="cart.html" class="cart-link">
+                            <div class="cart-icon">
+                                🛒
+                                <span class="cart-count">0</span>
+                            </div>
+                            <span class="cart-text">Cart</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="header-nav">
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-link">📱 All</a></li>
+                    <li><a href="category.html" class="nav-link">Today's Deals</a></li>
+                    <li><a href="category.html" class="nav-link">Customer Service</a></li>
+                    <li><a href="category.html" class="nav-link">Registry</a></li>
+                    <li><a href="category.html" class="nav-link">Gift Cards</a></li>
+                    <li><a href="seller-dashboard.html" class="nav-link">Sell</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="help-page">
+        <div class="container">
+            <!-- Help Header -->
+            <div class="help-header">
+                <h1>Help Center</h1>
+                <p>Find answers to your questions and get the support you need</p>
+                
+                <div class="help-search">
+                    <input type="text" placeholder="Search for help topics..." class="help-search-input">
+                    <button class="help-search-btn">Search</button>
+                </div>
+            </div>
+            
+            <!-- Quick Help Topics -->
+            <div class="quick-help-topics">
+                <h2>Popular Topics</h2>
+                <div class="help-topics-grid">
+                    <a href="#orders" class="help-topic-card" onclick="showFAQ('orders')">
+                        <div class="topic-icon">📦</div>
+                        <h3>Orders & Shipping</h3>
+                        <p>Track orders, delivery info, and shipping options</p>
+                    </a>
+                    
+                    <a href="#returns" class="help-topic-card" onclick="showFAQ('returns')">
+                        <div class="topic-icon">↩️</div>
+                        <h3>Returns & Refunds</h3>
+                        <p>Return policy, refund process, and exchanges</p>
+                    </a>
+                    
+                    <a href="#account" class="help-topic-card" onclick="showFAQ('account')">
+                        <div class="topic-icon">👤</div>
+                        <h3>Your Account</h3>
+                        <p>Account settings, login issues, and security</p>
+                    </a>
+                    
+                    <a href="#payment" class="help-topic-card" onclick="showFAQ('payment')">
+                        <div class="topic-icon">💳</div>
+                        <h3>Payment & Billing</h3>
+                        <p>Payment methods, billing issues, and invoices</p>
+                    </a>
+                    
+                    <a href="#products" class="help-topic-card" onclick="showFAQ('products')">
+                        <div class="topic-icon">🛍️</div>
+                        <h3>Products & Services</h3>
+                        <p>Product information, availability, and warranties</p>
+                    </a>
+                    
+                    <a href="#prime" class="help-topic-card" onclick="showFAQ('prime')">
+                        <div class="topic-icon">⭐</div>
+                        <h3>Prime Membership</h3>
+                        <p>Prime benefits, membership management, and perks</p>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- FAQ Sections -->
+            <div class="faq-sections">
+                <!-- Orders FAQ -->
+                <div id="faq-orders" class="faq-section">
+                    <h2>Orders & Shipping</h2>
+                    <div class="faq-items">
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                How can I track my order?
+                                <span class="faq-toggle">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>You can track your order by:</p>
+                                <ul>
+                                    <li>Going to "Your Orders" in your account</li>
+                                    <li>Clicking "Track Package" next to your order</li>
+                                    <li>Using the tracking number provided in your shipping confirmation email</li>
+                                    <li>Checking your mobile app for real-time updates</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                What are the shipping options and costs?
+                                <span class="faq-toggle">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>We offer several shipping options:</p>
+                                <ul>
+                                    <li><strong>Standard Delivery:</strong> FREE on orders over $35 (3-5 business days)</li>
+                                    <li><strong>Express Delivery:</strong> $9.99 (1-2 business days)</li>
+                                    <li><strong>Same-Day Delivery:</strong> $19.99 (available in select cities)</li>
+                                    <li><strong>Prime FREE Same-Day:</strong> Free for Prime members in eligible areas</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                Can I change or cancel my order?
+                                <span class="faq-toggle">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>You can modify or cancel your order if it hasn't been shipped yet:</p>
+                                <ul>
+                                    <li>Go to "Your Orders" and find the order</li>
+                                    <li>If the order shows "Not yet shipped," you can cancel or modify it</li>
+                                    <li>Once shipped, you can return the items after delivery</li>
+                                    <li>Some digital products cannot be cancelled once downloaded</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Returns FAQ -->
+                <div id="faq-returns" class="faq-section hidden">
+                    <h2>Returns & Refunds</h2>
+                    <div class="faq-items">
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                How do I return an item?
+                                <span class="faq-toggle">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>To return an item:</p>
+                                <ul>
+                                    <li>Go to "Your Orders" and find the item</li>
+                                    <li>Click "Return or Replace Items"</li>
+                                    <li>Select the reason for return</li>
+                                    <li>Choose return method (drop-off or pickup)</li>
+                                    <li>Print the return label and ship the item back</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                What is your return policy?
+                                <span class="faq-toggle">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Our return policy includes:</p>
+                                <ul>
+                                    <li>30-day return window for most items</li>
+                                    <li>Items must be in original condition</li>
+                                    <li>Free returns on most items</li>
+                                    <li>Extended holiday return period (Nov-Jan)</li>
+                                    <li>Some items (perishables, personalized items) cannot be returned</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                When will I receive my refund?
+                                <span class="faq-toggle">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Refund timeline:</p>
+                                <ul>
+                                    <li>Credit/Debit cards: 3-5 business days after we receive your return</li>
+                                    <li>Gift cards: Instant refund after return is processed</li>
+                                    <li>Bank transfers: 3-10 business days</li>
+                                    <li>Original payment method will be credited</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Account FAQ -->
+                <div id="faq-account" class="faq-section hidden">
+                    <h2>Your Account</h2>
+                    <div class="faq-items">
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                I can't sign in to my account
+                                <span class="faq-toggle">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>If you're having trouble signing in:</p>
+                                <ul>
+                                    <li>Check if you're using the correct email and password</li>
+                                    <li>Try resetting your password</li>
+                                    <li>Clear your browser cache and cookies</li>
+                                    <li>Disable browser extensions temporarily</li>
+                                    <li>Contact customer service if the problem persists</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                How do I update my account information?
+                                <span class="faq-toggle">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>To update your account:</p>
+                                <ul>
+                                    <li>Go to "Your Account" page</li>
+                                    <li>Click "Login & Security" to change email or password</li>
+                                    <li>Click "Your Addresses" to manage shipping addresses</li>
+                                    <li>Click "Your Payments" to update payment methods</li>
+                                    <li>Changes are saved automatically</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                How do I delete my account?
+                                <span class="faq-toggle">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>To delete your account:</p>
+                                <ul>
+                                    <li>Go to "Your Account" page</li>
+                                    <li>Scroll to the bottom and click "Close Your Account"</li>
+                                    <li>Follow the prompts to confirm account closure</li>
+                                    <li>Note: This action cannot be undone</li>
+                                    <li>Outstanding orders and subscriptions will be processed</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Support -->
+            <div class="contact-support">
+                <h2>Still need help?</h2>
+                <p>Our customer service team is here to help</p>
+                
+                <div class="contact-options">
+                    <div class="contact-option">
+                        <div class="contact-icon">💬</div>
+                        <h3>Live Chat</h3>
+                        <p>Chat with our support team</p>
+                        <button class="contact-btn" onclick="startChat()">Start Chat</button>
+                    </div>
+                    
+                    <div class="contact-option">
+                        <div class="contact-icon">📞</div>
+                        <h3>Phone Support</h3>
+                        <p>Call us at 1-800-123-4567</p>
+                        <button class="contact-btn" onclick="callSupport()">Call Now</button>
+                    </div>
+                    
+                    <div class="contact-option">
+                        <div class="contact-icon">✉️</div>
+                        <h3>Email Support</h3>
+                        <p>Send us a detailed message</p>
+                        <button class="contact-btn" onclick="showContactForm()">Send Email</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Chat Widget -->
+    <div id="chat-widget" class="chat-widget">
+        <div class="chat-header">
+            <h4>Customer Support</h4>
+            <button class="close-chat" onclick="closeChat()">×</button>
+        </div>
+        <div class="chat-messages">
+            <div class="chat-message bot">
+                <p>Hello! How can I help you today?</p>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" placeholder="Type your message..." id="chat-input-field">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <!-- Contact Form Modal -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Contact Support</h2>
+                <span class="close" onclick="closeContactForm()">&times;</span>
+            </div>
+            
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="contact-name">Your Name</label>
+                    <input type="text" id="contact-name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contact-email">Email Address</label>
+                    <input type="email" id="contact-email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contact-subject">Subject</label>
+                    <select id="contact-subject" required>
+                        <option>Order Issue</option>
+                        <option>Payment Problem</option>
+                        <option>Product Question</option>
+                        <option>Account Issue</option>
+                        <option>Technical Problem</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contact-message">Message</label>
+                    <textarea id="contact-message" required placeholder="Please describe your issue in detail..."></textarea>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">Send Message</button>
+                    <button type="button" class="cancel-btn" onclick="closeContactForm()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-columns">
+                    <div class="footer-column">
+                        <h4>Get to Know Us</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press Releases</a></li>
+                            <li><a href="#">Investor Relations</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Make Money with Us</h4>
+                        <ul>
+                            <li><a href="seller-dashboard.html">Sell Products</a></li>
+                            <li><a href="#">Become an Affiliate</a></li>
+                            <li><a href="#">Advertise Your Products</a></li>
+                            <li><a href="#">Self-Publish with Us</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Customer Service</h4>
+                        <ul>
+                            <li><a href="help.html">Help Center</a></li>
+                            <li><a href="#">Returns & Refunds</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="#">Shipping Info</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Connect with Us</h4>
+                        <ul>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">YouTube</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-links">
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+                <p>&copy; 2025 AmaClone. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

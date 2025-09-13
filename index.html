@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AmaClone - Online Shopping</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <a href="index.html">AmaClone</a>
+                    </div>
+                    
+                    <div class="location-selector">
+                        <span class="location-icon">📍</span>
+                        <div class="location-text">
+                            <span class="deliver-to">Deliver to</span>
+                            <span class="location-name">New York 10001</span>
+                        </div>
+                    </div>
+                    
+                    <div class="search-bar">
+                        <select class="category-selector">
+                            <option>All</option>
+                            <option>Electronics</option>
+                            <option>Fashion</option>
+                            <option>Home</option>
+                            <option>Books</option>
+                        </select>
+                        <input type="text" placeholder="Search products...">
+                        <button type="submit" class="search-btn">🔍</button>
+                    </div>
+                    
+                    <div class="header-actions">
+                        <a href="login.html" class="account-menu">
+                            <span class="greeting">Hello, Sign in</span>
+                            <span class="account-text">Account & Lists</span>
+                        </a>
+                        
+                        <a href="orders.html" class="orders-link">
+                            <span class="returns">Returns</span>
+                            <span class="orders">& Orders</span>
+                        </a>
+                        
+                        <a href="cart.html" class="cart-link">
+                            <div class="cart-icon">
+                                🛒
+                                <span class="cart-count">0</span>
+                            </div>
+                            <span class="cart-text">Cart</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="header-nav">
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-link">📱 All</a></li>
+                    <li><a href="category.html" class="nav-link">Today's Deals</a></li>
+                    <li><a href="category.html" class="nav-link">Customer Service</a></li>
+                    <li><a href="category.html" class="nav-link">Registry</a></li>
+                    <li><a href="category.html" class="nav-link">Gift Cards</a></li>
+                    <li><a href="seller-dashboard.html" class="nav-link">Sell</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Banner -->
+        <section class="hero-banner">
+            <div class="banner-carousel">
+                <div class="banner-slide active">
+                    <img src="https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=400&dpr=2" alt="Deal Banner">
+                    <div class="banner-content">
+                        <h2>Big Summer Sale</h2>
+                        <p>Up to 50% off on electronics</p>
+                        <a href="category.html" class="cta-btn">Shop Now</a>
+                    </div>
+                </div>
+                <div class="banner-slide">
+                    <img src="https://images.pexels.com/photos/1598505/pexels-photo-1598505.jpeg?auto=compress&cs=tinysrgb&w=1260&h=400&dpr=2" alt="Fashion Banner">
+                    <div class="banner-content">
+                        <h2>Fashion Week</h2>
+                        <p>Latest trends at best prices</p>
+                        <a href="category.html" class="cta-btn">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <button class="banner-nav prev" onclick="previousSlide()">❮</button>
+            <button class="banner-nav next" onclick="nextSlide()">❯</button>
+        </section>
+
+        <!-- Categories Grid -->
+        <section class="categories-section">
+            <div class="container">
+                <h2 class="section-title">Shop by Category</h2>
+                <div class="categories-grid">
+                    <a href="category.html" class="category-card">
+                        <img src="https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Electronics">
+                        <h3>Electronics</h3>
+                    </a>
+                    <a href="category.html" class="category-card">
+                        <img src="https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Fashion">
+                        <h3>Fashion</h3>
+                    </a>
+                    <a href="category.html" class="category-card">
+                        <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Home & Kitchen">
+                        <h3>Home & Kitchen</h3>
+                    </a>
+                    <a href="category.html" class="category-card">
+                        <img src="https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Books">
+                        <h3>Books</h3>
+                    </a>
+                    <a href="category.html" class="category-card">
+                        <img src="https://images.pexels.com/photos/7862/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=400" alt="Sports">
+                        <h3>Sports & Outdoors</h3>
+                    </a>
+                    <a href="category.html" class="category-card">
+                        <img src="https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Beauty">
+                        <h3>Beauty & Personal Care</h3>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Recommendations -->
+        <section class="recommendations-section">
+            <div class="container">
+                <h2 class="section-title">Best Sellers</h2>
+                <div class="product-row">
+                    <div class="product-card">
+                        <a href="product.html">
+                            <img src="https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Product">
+                            <div class="product-info">
+                                <h3>Wireless Bluetooth Headphones</h3>
+                                <div class="rating">
+                                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                                    <span class="rating-count">(1,234)</span>
+                                </div>
+                                <div class="price">
+                                    <span class="current-price">$79.99</span>
+                                    <span class="original-price">$129.99</span>
+                                </div>
+                            </div>
+                        </a>
+                        <button class="add-to-cart-btn" onclick="addToCart(1)">Add to Cart</button>
+                    </div>
+                    
+                    <div class="product-card">
+                        <a href="product.html">
+                            <img src="https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Product">
+                            <div class="product-info">
+                                <h3>Smart Watch Series 8</h3>
+                                <div class="rating">
+                                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                                    <span class="rating-count">(2,567)</span>
+                                </div>
+                                <div class="price">
+                                    <span class="current-price">$299.99</span>
+                                    <span class="original-price">$399.99</span>
+                                </div>
+                            </div>
+                        </a>
+                        <button class="add-to-cart-btn" onclick="addToCart(2)">Add to Cart</button>
+                    </div>
+                    
+                    <div class="product-card">
+                        <a href="product.html">
+                            <img src="https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Product">
+                            <div class="product-info">
+                                <h3>Laptop Backpack</h3>
+                                <div class="rating">
+                                    <span class="stars">⭐⭐⭐⭐</span>
+                                    <span class="rating-count">(891)</span>
+                                </div>
+                                <div class="price">
+                                    <span class="current-price">$49.99</span>
+                                    <span class="original-price">$69.99</span>
+                                </div>
+                            </div>
+                        </a>
+                        <button class="add-to-cart-btn" onclick="addToCart(3)">Add to Cart</button>
+                    </div>
+                    
+                    <div class="product-card">
+                        <a href="product.html">
+                            <img src="https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Product">
+                            <div class="product-info">
+                                <h3>Coffee Maker Pro</h3>
+                                <div class="rating">
+                                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                                    <span class="rating-count">(445)</span>
+                                </div>
+                                <div class="price">
+                                    <span class="current-price">$149.99</span>
+                                    <span class="original-price">$199.99</span>
+                                </div>
+                            </div>
+                        </a>
+                        <button class="add-to-cart-btn" onclick="addToCart(4)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trending Products -->
+        <section class="recommendations-section">
+            <div class="container">
+                <h2 class="section-title">Trending Now</h2>
+                <div class="product-row">
+                    <div class="product-card">
+                        <a href="product.html">
+                            <img src="https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Product">
+                            <div class="product-info">
+                                <h3>Wireless Charging Pad</h3>
+                                <div class="rating">
+                                    <span class="stars">⭐⭐⭐⭐</span>
+                                    <span class="rating-count">(678)</span>
+                                </div>
+                                <div class="price">
+                                    <span class="current-price">$29.99</span>
+                                </div>
+                            </div>
+                        </a>
+                        <button class="add-to-cart-btn" onclick="addToCart(5)">Add to Cart</button>
+                    </div>
+                    
+                    <div class="product-card">
+                        <a href="product.html">
+                            <img src="https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Product">
+                            <div class="product-info">
+                                <h3>Bluetooth Speaker</h3>
+                                <div class="rating">
+                                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                                    <span class="rating-count">(1,122)</span>
+                                </div>
+                                <div class="price">
+                                    <span class="current-price">$89.99</span>
+                                    <span class="original-price">$119.99</span>
+                                </div>
+                            </div>
+                        </a>
+                        <button class="add-to-cart-btn" onclick="addToCart(6)">Add to Cart</button>
+                    </div>
+                    
+                    <div class="product-card">
+                        <a href="product.html">
+                            <img src="https://images.pexels.com/photos/1334597/pexels-photo-1334597.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Product">
+                            <div class="product-info">
+                                <h3>Gaming Mouse</h3>
+                                <div class="rating">
+                                    <span class="stars">⭐⭐⭐⭐</span>
+                                    <span class="rating-count">(934)</span>
+                                </div>
+                                <div class="price">
+                                    <span class="current-price">$59.99</span>
+                                </div>
+                            </div>
+                        </a>
+                        <button class="add-to-cart-btn" onclick="addToCart(7)">Add to Cart</button>
+                    </div>
+                    
+                    <div class="product-card">
+                        <a href="product.html">
+                            <img src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Product">
+                            <div class="product-info">
+                                <h3>Desk Lamp LED</h3>
+                                <div class="rating">
+                                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                                    <span class="rating-count">(456)</span>
+                                </div>
+                                <div class="price">
+                                    <span class="current-price">$39.99</span>
+                                    <span class="original-price">$59.99</span>
+                                </div>
+                            </div>
+                        </a>
+                        <button class="add-to-cart-btn" onclick="addToCart(8)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-columns">
+                    <div class="footer-column">
+                        <h4>Get to Know Us</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press Releases</a></li>
+                            <li><a href="#">Investor Relations</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Make Money with Us</h4>
+                        <ul>
+                            <li><a href="seller-dashboard.html">Sell Products</a></li>
+                            <li><a href="#">Become an Affiliate</a></li>
+                            <li><a href="#">Advertise Your Products</a></li>
+                            <li><a href="#">Self-Publish with Us</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Customer Service</h4>
+                        <ul>
+                            <li><a href="help.html">Help Center</a></li>
+                            <li><a href="#">Returns & Refunds</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="#">Shipping Info</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Connect with Us</h4>
+                        <ul>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">YouTube</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-links">
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+                <p>&copy; 2025 AmaClone. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

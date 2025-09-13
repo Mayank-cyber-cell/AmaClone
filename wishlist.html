@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Wish List - AmaClone</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <a href="index.html">AmaClone</a>
+                    </div>
+                    
+                    <div class="location-selector">
+                        <span class="location-icon">📍</span>
+                        <div class="location-text">
+                            <span class="deliver-to">Deliver to</span>
+                            <span class="location-name">New York 10001</span>
+                        </div>
+                    </div>
+                    
+                    <div class="search-bar">
+                        <select class="category-selector">
+                            <option>All</option>
+                            <option>Electronics</option>
+                            <option>Fashion</option>
+                            <option>Home</option>
+                            <option>Books</option>
+                        </select>
+                        <input type="text" placeholder="Search products...">
+                        <button type="submit" class="search-btn">🔍</button>
+                    </div>
+                    
+                    <div class="header-actions">
+                        <a href="login.html" class="account-menu">
+                            <span class="greeting">Hello, John</span>
+                            <span class="account-text">Account & Lists</span>
+                        </a>
+                        
+                        <a href="orders.html" class="orders-link">
+                            <span class="returns">Returns</span>
+                            <span class="orders">& Orders</span>
+                        </a>
+                        
+                        <a href="cart.html" class="cart-link">
+                            <div class="cart-icon">
+                                🛒
+                                <span class="cart-count">0</span>
+                            </div>
+                            <span class="cart-text">Cart</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="header-nav">
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-link">📱 All</a></li>
+                    <li><a href="category.html" class="nav-link">Today's Deals</a></li>
+                    <li><a href="category.html" class="nav-link">Customer Service</a></li>
+                    <li><a href="category.html" class="nav-link">Registry</a></li>
+                    <li><a href="category.html" class="nav-link">Gift Cards</a></li>
+                    <li><a href="seller-dashboard.html" class="nav-link">Sell</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="wishlist-page">
+        <div class="container">
+            <div class="wishlist-header">
+                <h1>Your Wish List</h1>
+                <div class="wishlist-actions">
+                    <button class="share-list-btn">Share this list</button>
+                    <select class="list-selector">
+                        <option>My Wish List (5 items)</option>
+                        <option>Create a new list</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="wishlist-filters">
+                <button class="filter-btn active" onclick="filterWishlist('all')">All items</button>
+                <button class="filter-btn" onclick="filterWishlist('available')">Available</button>
+                <button class="filter-btn" onclick="filterWishlist('unavailable')">Unavailable</button>
+            </div>
+            
+            <div class="wishlist-grid">
+                <div class="wishlist-item" data-availability="available">
+                    <div class="item-image">
+                        <img src="https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Wireless Bluetooth Headphones">
+                        <button class="remove-from-wishlist" onclick="removeFromWishlist(this)">❌</button>
+                    </div>
+                    <div class="item-details">
+                        <h3><a href="product.html">Wireless Bluetooth Headphones</a></h3>
+                        <div class="rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-count">(1,234)</span>
+                        </div>
+                        <div class="price">
+                            <span class="current-price">$79.99</span>
+                            <span class="original-price">$129.99</span>
+                        </div>
+                        <div class="availability in-stock">✅ In Stock</div>
+                        <div class="item-actions">
+                            <button class="move-to-cart-btn" onclick="moveToCart(this)">Add to Cart</button>
+                            <button class="compare-btn" onclick="compareItems()">Compare</button>
+                        </div>
+                        <div class="added-date">Added on January 15, 2025</div>
+                    </div>
+                </div>
+                
+                <div class="wishlist-item" data-availability="available">
+                    <div class="item-image">
+                        <img src="https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Smart Watch Series 8">
+                        <button class="remove-from-wishlist" onclick="removeFromWishlist(this)">❌</button>
+                    </div>
+                    <div class="item-details">
+                        <h3><a href="product.html">Smart Watch Series 8</a></h3>
+                        <div class="rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-count">(2,567)</span>
+                        </div>
+                        <div class="price">
+                            <span class="current-price">$299.99</span>
+                            <span class="original-price">$399.99</span>
+                        </div>
+                        <div class="availability in-stock">✅ In Stock</div>
+                        <div class="item-actions">
+                            <button class="move-to-cart-btn" onclick="moveToCart(this)">Add to Cart</button>
+                            <button class="compare-btn" onclick="compareItems()">Compare</button>
+                        </div>
+                        <div class="added-date">Added on January 10, 2025</div>
+                    </div>
+                </div>
+                
+                <div class="wishlist-item" data-availability="unavailable">
+                    <div class="item-image">
+                        <img src="https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Laptop Backpack">
+                        <button class="remove-from-wishlist" onclick="removeFromWishlist(this)">❌</button>
+                        <div class="unavailable-overlay">Currently Unavailable</div>
+                    </div>
+                    <div class="item-details">
+                        <h3><a href="product.html">Laptop Backpack</a></h3>
+                        <div class="rating">
+                            <span class="stars">⭐⭐⭐⭐</span>
+                            <span class="rating-count">(891)</span>
+                        </div>
+                        <div class="price">
+                            <span class="current-price">$49.99</span>
+                            <span class="original-price">$69.99</span>
+                        </div>
+                        <div class="availability out-of-stock">❌ Currently unavailable</div>
+                        <div class="item-actions">
+                            <button class="notify-btn" onclick="notifyWhenAvailable(this)">Email me when available</button>
+                            <button class="find-similar-btn" onclick="findSimilar()">Find similar items</button>
+                        </div>
+                        <div class="added-date">Added on January 8, 2025</div>
+                    </div>
+                </div>
+                
+                <div class="wishlist-item" data-availability="available">
+                    <div class="item-image">
+                        <img src="https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Coffee Maker Pro">
+                        <button class="remove-from-wishlist" onclick="removeFromWishlist(this)">❌</button>
+                    </div>
+                    <div class="item-details">
+                        <h3><a href="product.html">Coffee Maker Pro</a></h3>
+                        <div class="rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-count">(445)</span>
+                        </div>
+                        <div class="price">
+                            <span class="current-price">$149.99</span>
+                            <span class="original-price">$199.99</span>
+                        </div>
+                        <div class="availability in-stock">✅ In Stock</div>
+                        <div class="price-drop">📉 Price dropped by $20</div>
+                        <div class="item-actions">
+                            <button class="move-to-cart-btn" onclick="moveToCart(this)">Add to Cart</button>
+                            <button class="compare-btn" onclick="compareItems()">Compare</button>
+                        </div>
+                        <div class="added-date">Added on December 20, 2024</div>
+                    </div>
+                </div>
+                
+                <div class="wishlist-item" data-availability="available">
+                    <div class="item-image">
+                        <img src="https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Wireless Charging Pad">
+                        <button class="remove-from-wishlist" onclick="removeFromWishlist(this)">❌</button>
+                    </div>
+                    <div class="item-details">
+                        <h3><a href="product.html">Wireless Charging Pad</a></h3>
+                        <div class="rating">
+                            <span class="stars">⭐⭐⭐⭐</span>
+                            <span class="rating-count">(678)</span>
+                        </div>
+                        <div class="price">
+                            <span class="current-price">$29.99</span>
+                        </div>
+                        <div class="availability in-stock">✅ In Stock</div>
+                        <div class="item-actions">
+                            <button class="move-to-cart-btn" onclick="moveToCart(this)">Add to Cart</button>
+                            <button class="compare-btn" onclick="compareItems()">Compare</button>
+                        </div>
+                        <div class="added-date">Added on January 5, 2025</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Empty Wishlist State -->
+            <div class="empty-wishlist hidden">
+                <div class="empty-icon">💝</div>
+                <h2>Your Wish List is empty</h2>
+                <p>Explore products and add them to your wish list to save them for later.</p>
+                <a href="index.html" class="continue-shopping-btn">Continue Shopping</a>
+            </div>
+            
+            <!-- Bulk Actions -->
+            <div class="bulk-actions">
+                <button class="bulk-btn" onclick="addAllToCart()">Add all available items to Cart</button>
+                <button class="bulk-btn" onclick="deleteAll()">Delete all items</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Notification Modal -->
+    <div id="notification-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Email Notification</h2>
+                <span class="close" onclick="closeNotificationModal()">&times;</span>
+            </div>
+            
+            <div class="notification-content">
+                <p>We'll send you an email when this item becomes available again.</p>
+                
+                <form class="notification-form">
+                    <div class="form-group">
+                        <label for="notification-email">Email address</label>
+                        <input type="email" id="notification-email" placeholder="Enter your email address" required>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="save-notification-btn">Save Notification</button>
+                        <button type="button" class="cancel-btn" onclick="closeNotificationModal()">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-columns">
+                    <div class="footer-column">
+                        <h4>Get to Know Us</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press Releases</a></li>
+                            <li><a href="#">Investor Relations</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Make Money with Us</h4>
+                        <ul>
+                            <li><a href="seller-dashboard.html">Sell Products</a></li>
+                            <li><a href="#">Become an Affiliate</a></li>
+                            <li><a href="#">Advertise Your Products</a></li>
+                            <li><a href="#">Self-Publish with Us</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Customer Service</h4>
+                        <ul>
+                            <li><a href="help.html">Help Center</a></li>
+                            <li><a href="#">Returns & Refunds</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="#">Shipping Info</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Connect with Us</h4>
+                        <ul>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">YouTube</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-links">
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+                <p>&copy; 2025 AmaClone. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

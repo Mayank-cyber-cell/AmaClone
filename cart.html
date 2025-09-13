@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - AmaClone</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <a href="index.html">AmaClone</a>
+                    </div>
+                    
+                    <div class="location-selector">
+                        <span class="location-icon">📍</span>
+                        <div class="location-text">
+                            <span class="deliver-to">Deliver to</span>
+                            <span class="location-name">New York 10001</span>
+                        </div>
+                    </div>
+                    
+                    <div class="search-bar">
+                        <select class="category-selector">
+                            <option>All</option>
+                            <option>Electronics</option>
+                            <option>Fashion</option>
+                            <option>Home</option>
+                            <option>Books</option>
+                        </select>
+                        <input type="text" placeholder="Search products...">
+                        <button type="submit" class="search-btn">🔍</button>
+                    </div>
+                    
+                    <div class="header-actions">
+                        <a href="login.html" class="account-menu">
+                            <span class="greeting">Hello, Sign in</span>
+                            <span class="account-text">Account & Lists</span>
+                        </a>
+                        
+                        <a href="orders.html" class="orders-link">
+                            <span class="returns">Returns</span>
+                            <span class="orders">& Orders</span>
+                        </a>
+                        
+                        <a href="cart.html" class="cart-link active">
+                            <div class="cart-icon">
+                                🛒
+                                <span class="cart-count">3</span>
+                            </div>
+                            <span class="cart-text">Cart</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="header-nav">
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-link">📱 All</a></li>
+                    <li><a href="category.html" class="nav-link">Today's Deals</a></li>
+                    <li><a href="category.html" class="nav-link">Customer Service</a></li>
+                    <li><a href="category.html" class="nav-link">Registry</a></li>
+                    <li><a href="category.html" class="nav-link">Gift Cards</a></li>
+                    <li><a href="seller-dashboard.html" class="nav-link">Sell</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="cart-page">
+        <div class="container">
+            <div class="cart-layout">
+                <!-- Cart Items -->
+                <div class="cart-items-section">
+                    <div class="cart-header">
+                        <h1>Shopping Cart</h1>
+                        <span class="item-count">3 items</span>
+                        <a href="#" class="deselect-all">Deselect all items</a>
+                        <span class="price-label">Price</span>
+                    </div>
+                    
+                    <div class="cart-items">
+                        <div class="cart-item" data-price="79.99">
+                            <input type="checkbox" class="item-checkbox" checked>
+                            <img src="https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Wireless Bluetooth Headphones">
+                            <div class="item-details">
+                                <h3><a href="product.html">Wireless Bluetooth Headphones</a></h3>
+                                <p class="item-status in-stock">In Stock</p>
+                                <p class="shipping-info">FREE Shipping</p>
+                                <p class="eligibility">Eligible for FREE Shipping</p>
+                                
+                                <div class="item-actions">
+                                    <div class="quantity-selector">
+                                        <select onchange="updateQuantity(this, 79.99)">
+                                            <option value="1" selected>Qty: 1</option>
+                                            <option value="2">Qty: 2</option>
+                                            <option value="3">Qty: 3</option>
+                                            <option value="4">Qty: 4</option>
+                                            <option value="5">Qty: 5</option>
+                                        </select>
+                                    </div>
+                                    <button class="action-btn" onclick="removeItem(this)">Delete</button>
+                                    <button class="action-btn" onclick="saveForLater(this)">Save for later</button>
+                                    <button class="action-btn" onclick="compareItems()">Compare with similar items</button>
+                                    <button class="action-btn" onclick="shareItem()">Share</button>
+                                </div>
+                            </div>
+                            <div class="item-price">
+                                <span class="price">$79.99</span>
+                            </div>
+                        </div>
+                        
+                        <div class="cart-item" data-price="299.99">
+                            <input type="checkbox" class="item-checkbox" checked>
+                            <img src="https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Smart Watch Series 8">
+                            <div class="item-details">
+                                <h3><a href="product.html">Smart Watch Series 8</a></h3>
+                                <p class="item-status in-stock">In Stock</p>
+                                <p class="shipping-info">FREE Shipping</p>
+                                <p class="eligibility">Eligible for FREE Shipping</p>
+                                
+                                <div class="item-actions">
+                                    <div class="quantity-selector">
+                                        <select onchange="updateQuantity(this, 299.99)">
+                                            <option value="1" selected>Qty: 1</option>
+                                            <option value="2">Qty: 2</option>
+                                            <option value="3">Qty: 3</option>
+                                            <option value="4">Qty: 4</option>
+                                            <option value="5">Qty: 5</option>
+                                        </select>
+                                    </div>
+                                    <button class="action-btn" onclick="removeItem(this)">Delete</button>
+                                    <button class="action-btn" onclick="saveForLater(this)">Save for later</button>
+                                    <button class="action-btn" onclick="compareItems()">Compare with similar items</button>
+                                    <button class="action-btn" onclick="shareItem()">Share</button>
+                                </div>
+                            </div>
+                            <div class="item-price">
+                                <span class="price">$299.99</span>
+                            </div>
+                        </div>
+                        
+                        <div class="cart-item" data-price="49.99">
+                            <input type="checkbox" class="item-checkbox" checked>
+                            <img src="https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Laptop Backpack">
+                            <div class="item-details">
+                                <h3><a href="product.html">Laptop Backpack</a></h3>
+                                <p class="item-status in-stock">In Stock</p>
+                                <p class="shipping-info">FREE Shipping</p>
+                                <p class="eligibility">Eligible for FREE Shipping</p>
+                                
+                                <div class="item-actions">
+                                    <div class="quantity-selector">
+                                        <select onchange="updateQuantity(this, 49.99)">
+                                            <option value="1" selected>Qty: 1</option>
+                                            <option value="2">Qty: 2</option>
+                                            <option value="3">Qty: 3</option>
+                                            <option value="4">Qty: 4</option>
+                                            <option value="5">Qty: 5</option>
+                                        </select>
+                                    </div>
+                                    <button class="action-btn" onclick="removeItem(this)">Delete</button>
+                                    <button class="action-btn" onclick="saveForLater(this)">Save for later</button>
+                                    <button class="action-btn" onclick="compareItems()">Compare with similar items</button>
+                                    <button class="action-btn" onclick="shareItem()">Share</button>
+                                </div>
+                            </div>
+                            <div class="item-price">
+                                <span class="price">$49.99</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Saved for Later -->
+                    <div class="saved-for-later">
+                        <h3>Saved for later</h3>
+                        <div class="saved-items">
+                            <div class="saved-item">
+                                <img src="https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg?auto=compress&cs=tinysrgb&w=150" alt="Coffee Maker Pro">
+                                <div class="saved-item-info">
+                                    <h4>Coffee Maker Pro</h4>
+                                    <span class="price">$149.99</span>
+                                    <div class="saved-actions">
+                                        <button onclick="moveToCart(this)">Move to Cart</button>
+                                        <button onclick="deleteSaved(this)">Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <div class="summary-card">
+                        <p class="free-shipping-notice">
+                            🚚 Your order qualifies for FREE Shipping. Choose this option at checkout.
+                        </p>
+                        
+                        <div class="subtotal-section">
+                            <div class="subtotal-row">
+                                <span>Subtotal (3 items):</span>
+                                <span class="subtotal-amount">$429.97</span>
+                            </div>
+                        </div>
+                        
+                        <button class="checkout-btn" onclick="proceedToCheckout()">Proceed to checkout</button>
+                    </div>
+                    
+                    <div class="gift-options">
+                        <h4>🎁 Send as a gift</h4>
+                        <label>
+                            <input type="checkbox"> This order contains a gift
+                        </label>
+                    </div>
+                    
+                    <div class="recommended-accessories">
+                        <h4>Frequently bought together</h4>
+                        <div class="accessory-item">
+                            <img src="https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Wireless Charging Pad">
+                            <div class="accessory-info">
+                                <h5>Wireless Charging Pad</h5>
+                                <span>$29.99</span>
+                                <button class="add-accessory-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-columns">
+                    <div class="footer-column">
+                        <h4>Get to Know Us</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press Releases</a></li>
+                            <li><a href="#">Investor Relations</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Make Money with Us</h4>
+                        <ul>
+                            <li><a href="seller-dashboard.html">Sell Products</a></li>
+                            <li><a href="#">Become an Affiliate</a></li>
+                            <li><a href="#">Advertise Your Products</a></li>
+                            <li><a href="#">Self-Publish with Us</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Customer Service</h4>
+                        <ul>
+                            <li><a href="help.html">Help Center</a></li>
+                            <li><a href="#">Returns & Refunds</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="#">Shipping Info</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Connect with Us</h4>
+                        <ul>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">YouTube</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-links">
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+                <p>&copy; 2025 AmaClone. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Dashboard - AmaClone</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Seller Header -->
+    <header class="seller-header">
+        <div class="container">
+            <div class="seller-header-content">
+                <div class="logo">
+                    <a href="index.html">AmaClone</a>
+                    <span class="seller-label">Seller Central</span>
+                </div>
+                
+                <nav class="seller-nav">
+                    <ul>
+                        <li><a href="#" class="nav-link active">Dashboard</a></li>
+                        <li><a href="#" class="nav-link">Inventory</a></li>
+                        <li><a href="#" class="nav-link">Orders</a></li>
+                        <li><a href="#" class="nav-link">Reports</a></li>
+                        <li><a href="#" class="nav-link">Help</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="seller-actions">
+                    <select class="store-selector">
+                        <option>Electronics Store</option>
+                        <option>Create New Store</option>
+                    </select>
+                    <a href="profile.html" class="profile-link">John's Store</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dashboard -->
+    <main class="seller-dashboard">
+        <div class="container">
+            <!-- Dashboard Stats -->
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">💰</div>
+                    <div class="stat-content">
+                        <h3>$12,450</h3>
+                        <p>This month's sales</p>
+                        <span class="stat-change positive">+15% from last month</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">📦</div>
+                    <div class="stat-content">
+                        <h3>127</h3>
+                        <p>Orders this month</p>
+                        <span class="stat-change positive">+8% from last month</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-content">
+                        <h3>45</h3>
+                        <p>Active products</p>
+                        <span class="stat-change neutral">No change</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-content">
+                        <h3>4.8</h3>
+                        <p>Average rating</p>
+                        <span class="stat-change positive">+0.2 from last month</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <h2>Quick Actions</h2>
+                <div class="action-buttons">
+                    <button class="action-btn" onclick="showAddProduct()">+ Add New Product</button>
+                    <button class="action-btn" onclick="showOrders()">View Orders</button>
+                    <button class="action-btn" onclick="showInventory()">Manage Inventory</button>
+                    <button class="action-btn" onclick="showReports()">View Reports</button>
+                </div>
+            </div>
+            
+            <!-- Recent Orders -->
+            <div class="dashboard-section">
+                <div class="section-header">
+                    <h2>Recent Orders</h2>
+                    <a href="#" class="view-all-link" onclick="showOrders()">View all orders</a>
+                </div>
+                
+                <div class="orders-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Product</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#ORD-001</td>
+                                <td>John Smith</td>
+                                <td>Wireless Headphones</td>
+                                <td>$79.99</td>
+                                <td><span class="status shipped">Shipped</span></td>
+                                <td>Jan 25, 2025</td>
+                                <td>
+                                    <button class="table-btn" onclick="viewOrder('ORD-001')">View</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-002</td>
+                                <td>Sarah Johnson</td>
+                                <td>Smart Watch</td>
+                                <td>$299.99</td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td>Jan 24, 2025</td>
+                                <td>
+                                    <button class="table-btn" onclick="processOrder('ORD-002')">Process</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-003</td>
+                                <td>Mike Davis</td>
+                                <td>Gaming Mouse</td>
+                                <td>$59.99</td>
+                                <td><span class="status delivered">Delivered</span></td>
+                                <td>Jan 23, 2025</td>
+                                <td>
+                                    <button class="table-btn" onclick="viewOrder('ORD-003')">View</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Product Performance -->
+            <div class="dashboard-section">
+                <div class="section-header">
+                    <h2>Top Performing Products</h2>
+                    <a href="#" class="view-all-link" onclick="showInventory()">View all products</a>
+                </div>
+                
+                <div class="product-performance">
+                    <div class="performance-item">
+                        <img src="https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Product">
+                        <div class="performance-details">
+                            <h4>Wireless Bluetooth Headphones</h4>
+                            <p>45 sales this month</p>
+                            <div class="performance-metrics">
+                                <span class="metric">$3,597 revenue</span>
+                                <span class="metric">4.9 ⭐</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="performance-item">
+                        <img src="https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Product">
+                        <div class="performance-details">
+                            <h4>Smart Watch Series 8</h4>
+                            <p>32 sales this month</p>
+                            <div class="performance-metrics">
+                                <span class="metric">$9,597 revenue</span>
+                                <span class="metric">4.8 ⭐</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="performance-item">
+                        <img src="https://images.pexels.com/photos/1334597/pexels-photo-1334597.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Product">
+                        <div class="performance-details">
+                            <h4>Gaming Mouse Pro</h4>
+                            <p>28 sales this month</p>
+                            <div class="performance-metrics">
+                                <span class="metric">$1,679 revenue</span>
+                                <span class="metric">4.7 ⭐</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Add Product Modal -->
+    <div id="add-product-modal" class="modal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h2>Add New Product</h2>
+                <span class="close" onclick="closeModal('add-product-modal')">&times;</span>
+            </div>
+            
+            <form class="add-product-form">
+                <div class="form-section">
+                    <h3>Product Information</h3>
+                    
+                    <div class="form-group">
+                        <label for="product-title">Product Title *</label>
+                        <input type="text" id="product-title" required placeholder="Enter product title">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="product-description">Description *</label>
+                        <textarea id="product-description" required placeholder="Describe your product..."></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="product-category">Category *</label>
+                            <select id="product-category" required>
+                                <option value="">Select Category</option>
+                                <option>Electronics</option>
+                                <option>Fashion</option>
+                                <option>Home & Kitchen</option>
+                                <option>Sports</option>
+                                <option>Books</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="product-brand">Brand</label>
+                            <input type="text" id="product-brand" placeholder="Enter brand name">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3>Pricing & Inventory</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="product-price">Price *</label>
+                            <input type="number" id="product-price" required step="0.01" placeholder="0.00">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="product-compare-price">Compare at price</label>
+                            <input type="number" id="product-compare-price" step="0.01" placeholder="0.00">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="product-quantity">Quantity *</label>
+                            <input type="number" id="product-quantity" required placeholder="0">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3>Product Images</h3>
+                    <div class="image-upload">
+                        <div class="upload-area">
+                            <p>📸 Click to upload product images</p>
+                            <p class="upload-note">Upload up to 8 images. First image will be the main image.</p>
+                            <input type="file" id="product-images" multiple accept="image/*" style="display: none;">
+                            <button type="button" class="upload-btn" onclick="document.getElementById('product-images').click()">Choose Images</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="save-product-btn">Save Product</button>
+                    <button type="button" class="cancel-btn" onclick="closeModal('add-product-modal')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Orders Modal -->
+    <div id="orders-modal" class="modal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h2>All Orders</h2>
+                <span class="close" onclick="closeModal('orders-modal')">&times;</span>
+            </div>
+            
+            <div class="orders-content">
+                <div class="orders-filters">
+                    <button class="filter-btn active" onclick="filterSellerOrders('all')">All Orders</button>
+                    <button class="filter-btn" onclick="filterSellerOrders('pending')">Pending</button>
+                    <button class="filter-btn" onclick="filterSellerOrders('shipped')">Shipped</button>
+                    <button class="filter-btn" onclick="filterSellerOrders('delivered')">Delivered</button>
+                </div>
+                
+                <div class="orders-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Product</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="seller-orders-tbody">
+                            <tr>
+                                <td>#ORD-001</td>
+                                <td>John Smith</td>
+                                <td>Wireless Headphones</td>
+                                <td>$79.99</td>
+                                <td><span class="status shipped">Shipped</span></td>
+                                <td>Jan 25, 2025</td>
+                                <td>
+                                    <button class="table-btn" onclick="updateOrderStatus('ORD-001')">Update</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-002</td>
+                                <td>Sarah Johnson</td>
+                                <td>Smart Watch</td>
+                                <td>$299.99</td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td>Jan 24, 2025</td>
+                                <td>
+                                    <button class="table-btn" onclick="updateOrderStatus('ORD-002')">Ship Now</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-003</td>
+                                <td>Mike Davis</td>
+                                <td>Gaming Mouse</td>
+                                <td>$59.99</td>
+                                <td><span class="status delivered">Delivered</span></td>
+                                <td>Jan 23, 2025</td>
+                                <td>
+                                    <button class="table-btn" onclick="viewOrder('ORD-003')">View</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inventory Modal -->
+    <div id="inventory-modal" class="modal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h2>Inventory Management</h2>
+                <span class="close" onclick="closeModal('inventory-modal')">&times;</span>
+            </div>
+            
+            <div class="inventory-content">
+                <div class="inventory-actions">
+                    <button class="action-btn" onclick="showAddProduct()">+ Add Product</button>
+                    <input type="text" placeholder="Search products..." class="search-inventory">
+                </div>
+                
+                <div class="inventory-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>SKU</th>
+                                <th>Price</th>
+                                <th>Stock</th>
+                                <th>Status</th>
+                                <th>Sales</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="product-cell">
+                                        <img src="https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?auto=compress&cs=tinysrgb&w=50" alt="Product">
+                                        <span>Wireless Headphones</span>
+                                    </div>
+                                </td>
+                                <td>WH-001</td>
+                                <td>$79.99</td>
+                                <td>25</td>
+                                <td><span class="status active">Active</span></td>
+                                <td>45</td>
+                                <td>
+                                    <button class="table-btn" onclick="editProduct('WH-001')">Edit</button>
+                                    <button class="table-btn danger" onclick="deleteProduct('WH-001')">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="product-cell">
+                                        <img src="https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=50" alt="Product">
+                                        <span>Smart Watch</span>
+                                    </div>
+                                </td>
+                                <td>SW-001</td>
+                                <td>$299.99</td>
+                                <td>12</td>
+                                <td><span class="status active">Active</span></td>
+                                <td>32</td>
+                                <td>
+                                    <button class="table-btn" onclick="editProduct('SW-001')">Edit</button>
+                                    <button class="table-btn danger" onclick="deleteProduct('SW-001')">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="product-cell">
+                                        <img src="https://images.pexels.com/photos/1334597/pexels-photo-1334597.jpeg?auto=compress&cs=tinysrgb&w=50" alt="Product">
+                                        <span>Gaming Mouse</span>
+                                    </div>
+                                </td>
+                                <td>GM-001</td>
+                                <td>$59.99</td>
+                                <td>0</td>
+                                <td><span class="status out-of-stock">Out of Stock</span></td>
+                                <td>28</td>
+                                <td>
+                                    <button class="table-btn" onclick="restockProduct('GM-001')">Restock</button>
+                                    <button class="table-btn" onclick="editProduct('GM-001')">Edit</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

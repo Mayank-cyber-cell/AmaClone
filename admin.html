@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - AmaClone</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="admin-body">
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <div class="container">
+            <div class="admin-header-content">
+                <div class="logo">
+                    <a href="index.html">AmaClone</a>
+                    <span class="admin-label">Admin Panel</span>
+                </div>
+                
+                <nav class="admin-nav">
+                    <ul>
+                        <li><a href="#" class="nav-link active" onclick="showAdminSection('dashboard')">Dashboard</a></li>
+                        <li><a href="#" class="nav-link" onclick="showAdminSection('products')">Products</a></li>
+                        <li><a href="#" class="nav-link" onclick="showAdminSection('users')">Users</a></li>
+                        <li><a href="#" class="nav-link" onclick="showAdminSection('orders')">Orders</a></li>
+                        <li><a href="#" class="nav-link" onclick="showAdminSection('reports')">Reports</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="admin-actions">
+                    <button class="notification-btn">🔔 <span class="notification-count">5</span></button>
+                    <a href="profile.html" class="admin-profile">Admin</a>
+                    <a href="index.html" class="logout-btn">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Admin Content -->
+    <main class="admin-content">
+        <div class="container">
+            <!-- Dashboard Section -->
+            <div id="admin-dashboard" class="admin-section active">
+                <div class="admin-header-section">
+                    <h1>Admin Dashboard</h1>
+                    <p>Manage your e-commerce platform</p>
+                </div>
+                
+                <!-- Admin Stats -->
+                <div class="admin-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-content">
+                            <h3>12,450</h3>
+                            <p>Total Users</p>
+                            <span class="stat-change positive">+5% this month</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">🛒</div>
+                        <div class="stat-content">
+                            <h3>3,247</h3>
+                            <p>Total Orders</p>
+                            <span class="stat-change positive">+12% this month</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">📦</div>
+                        <div class="stat-content">
+                            <h3>8,930</h3>
+                            <p>Total Products</p>
+                            <span class="stat-change neutral">+2% this month</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">💰</div>
+                        <div class="stat-content">
+                            <h3>$127,450</h3>
+                            <p>Total Revenue</p>
+                            <span class="stat-change positive">+18% this month</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pending Actions -->
+                <div class="pending-actions">
+                    <h2>Pending Actions</h2>
+                    <div class="action-cards">
+                        <div class="action-card urgent">
+                            <div class="action-info">
+                                <h4>Product Approvals</h4>
+                                <p>15 products awaiting approval</p>
+                            </div>
+                            <button class="action-btn" onclick="showAdminSection('products')">Review Now</button>
+                        </div>
+                        
+                        <div class="action-card">
+                            <div class="action-info">
+                                <h4>User Verification</h4>
+                                <p>8 seller accounts pending verification</p>
+                            </div>
+                            <button class="action-btn" onclick="showAdminSection('users')">Review</button>
+                        </div>
+                        
+                        <div class="action-card">
+                            <div class="action-info">
+                                <h4>Order Issues</h4>
+                                <p>3 orders require manual intervention</p>
+                            </div>
+                            <button class="action-btn" onclick="showAdminSection('orders')">Handle</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recent Activity -->
+                <div class="recent-activity">
+                    <h2>Recent Activity</h2>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon">✅</div>
+                            <div class="activity-content">
+                                <p><strong>Product approved:</strong> "Gaming Laptop Pro" by TechStore</p>
+                                <span class="activity-time">2 minutes ago</span>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon">👤</div>
+                            <div class="activity-content">
+                                <p><strong>New user registered:</strong> john.doe@email.com</p>
+                                <span class="activity-time">15 minutes ago</span>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon">🛒</div>
+                            <div class="activity-content">
+                                <p><strong>Large order placed:</strong> Order #12345 - $2,450</p>
+                                <span class="activity-time">1 hour ago</span>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon">⚠️</div>
+                            <div class="activity-content">
+                                <p><strong>Product reported:</strong> "Fake Headphones" flagged by user</p>
+                                <span class="activity-time">2 hours ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products Management Section -->
+            <div id="admin-products" class="admin-section">
+                <div class="admin-header-section">
+                    <h1>Product Management</h1>
+                    <div class="section-actions">
+                        <input type="text" placeholder="Search products..." class="search-admin">
+                        <select class="filter-select">
+                            <option>All Products</option>
+                            <option>Pending Approval</option>
+                            <option>Approved</option>
+                            <option>Rejected</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="admin-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Seller</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                                <th>Status</th>
+                                <th>Submitted</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="product-cell">
+                                        <img src="https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?auto=compress&cs=tinysrgb&w=50" alt="Product">
+                                        <span>Gaming Headset Pro</span>
+                                    </div>
+                                </td>
+                                <td>ElectroStore</td>
+                                <td>Electronics</td>
+                                <td>$129.99</td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td>Jan 25, 2025</td>
+                                <td>
+                                    <button class="approve-btn" onclick="approveProduct('GH-001')">Approve</button>
+                                    <button class="reject-btn" onclick="rejectProduct('GH-001')">Reject</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="product-cell">
+                                        <img src="https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=50" alt="Product">
+                                        <span>Smart Fitness Watch</span>
+                                    </div>
+                                </td>
+                                <td>HealthTech</td>
+                                <td>Electronics</td>
+                                <td>$199.99</td>
+                                <td><span class="status approved">Approved</span></td>
+                                <td>Jan 24, 2025</td>
+                                <td>
+                                    <button class="view-btn" onclick="viewProduct('SF-001')">View</button>
+                                    <button class="suspend-btn" onclick="suspendProduct('SF-001')">Suspend</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="product-cell">
+                                        <img src="https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=50" alt="Product">
+                                        <span>Designer Handbag</span>
+                                    </div>
+                                </td>
+                                <td>FashionHub</td>
+                                <td>Fashion</td>
+                                <td>$89.99</td>
+                                <td><span class="status rejected">Rejected</span></td>
+                                <td>Jan 23, 2025</td>
+                                <td>
+                                    <button class="view-btn" onclick="viewProduct('DH-001')">View</button>
+                                    <button class="reconsider-btn" onclick="reconsiderProduct('DH-001')">Reconsider</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Users Management Section -->
+            <div id="admin-users" class="admin-section">
+                <div class="admin-header-section">
+                    <h1>User Management</h1>
+                    <div class="section-actions">
+                        <input type="text" placeholder="Search users..." class="search-admin">
+                        <select class="filter-select">
+                            <option>All Users</option>
+                            <option>Customers</option>
+                            <option>Sellers</option>
+                            <option>Pending Verification</option>
+                            <option>Suspended</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="admin-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Email</th>
+                                <th>Type</th>
+                                <th>Status</th>
+                                <th>Joined</th>
+                                <th>Orders</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <div class="user-avatar">JD</div>
+                                        <span>John Doe</span>
+                                    </div>
+                                </td>
+                                <td>john.doe@email.com</td>
+                                <td>Customer</td>
+                                <td><span class="status active">Active</span></td>
+                                <td>Jan 15, 2025</td>
+                                <td>5</td>
+                                <td>
+                                    <button class="view-btn" onclick="viewUser('john.doe')">View</button>
+                                    <button class="suspend-btn" onclick="suspendUser('john.doe')">Suspend</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <div class="user-avatar">ES</div>
+                                        <span>ElectroStore</span>
+                                    </div>
+                                </td>
+                                <td>info@electrostore.com</td>
+                                <td>Seller</td>
+                                <td><span class="status pending">Pending Verification</span></td>
+                                <td>Jan 20, 2025</td>
+                                <td>0</td>
+                                <td>
+                                    <button class="approve-btn" onclick="verifyUser('electrostore')">Verify</button>
+                                    <button class="reject-btn" onclick="rejectUser('electrostore')">Reject</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <div class="user-avatar">SJ</div>
+                                        <span>Sarah Johnson</span>
+                                    </div>
+                                </td>
+                                <td>sarah.j@email.com</td>
+                                <td>Customer</td>
+                                <td><span class="status suspended">Suspended</span></td>
+                                <td>Dec 10, 2024</td>
+                                <td>12</td>
+                                <td>
+                                    <button class="view-btn" onclick="viewUser('sarah.j')">View</button>
+                                    <button class="reactivate-btn" onclick="reactivateUser('sarah.j')">Reactivate</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Orders Management Section -->
+            <div id="admin-orders" class="admin-section">
+                <div class="admin-header-section">
+                    <h1>Order Management</h1>
+                    <div class="section-actions">
+                        <input type="text" placeholder="Search orders..." class="search-admin">
+                        <select class="filter-select">
+                            <option>All Orders</option>
+                            <option>Pending</option>
+                            <option>Processing</option>
+                            <option>Shipped</option>
+                            <option>Delivered</option>
+                            <option>Issues</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="admin-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                                <th>Payment</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#12345</td>
+                                <td>John Doe</td>
+                                <td>$2,450.00</td>
+                                <td><span class="status issue">Payment Issue</span></td>
+                                <td>Jan 25, 2025</td>
+                                <td>Credit Card</td>
+                                <td>
+                                    <button class="resolve-btn" onclick="resolveOrder('12345')">Resolve</button>
+                                    <button class="view-btn" onclick="viewOrder('12345')">View</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#12344</td>
+                                <td>Sarah Smith</td>
+                                <td>$189.99</td>
+                                <td><span class="status shipped">Shipped</span></td>
+                                <td>Jan 24, 2025</td>
+                                <td>PayPal</td>
+                                <td>
+                                    <button class="view-btn" onclick="viewOrder('12344')">View</button>
+                                    <button class="track-btn" onclick="trackOrder('12344')">Track</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#12343</td>
+                                <td>Mike Johnson</td>
+                                <td>$75.50</td>
+                                <td><span class="status delivered">Delivered</span></td>
+                                <td>Jan 22, 2025</td>
+                                <td>Credit Card</td>
+                                <td>
+                                    <button class="view-btn" onclick="viewOrder('12343')">View</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Reports Section -->
+            <div id="admin-reports" class="admin-section">
+                <div class="admin-header-section">
+                    <h1>Reports & Analytics</h1>
+                    <div class="section-actions">
+                        <select class="filter-select">
+                            <option>Last 30 days</option>
+                            <option>Last 7 days</option>
+                            <option>Last 3 months</option>
+                            <option>Last year</option>
+                        </select>
+                        <button class="export-btn">Export Report</button>
+                    </div>
+                </div>
+                
+                <div class="reports-grid">
+                    <div class="report-card">
+                        <h3>Sales Overview</h3>
+                        <div class="report-metric">
+                            <span class="metric-value">$127,450</span>
+                            <span class="metric-label">Total Revenue</span>
+                            <span class="metric-change positive">+18%</span>
+                        </div>
+                        <div class="report-chart">
+                            <!-- Chart placeholder -->
+                            <div class="chart-placeholder">📈 Sales Chart</div>
+                        </div>
+                    </div>
+                    
+                    <div class="report-card">
+                        <h3>Top Categories</h3>
+                        <div class="category-list">
+                            <div class="category-item">
+                                <span>Electronics</span>
+                                <span class="category-percentage">45%</span>
+                            </div>
+                            <div class="category-item">
+                                <span>Fashion</span>
+                                <span class="category-percentage">28%</span>
+                            </div>
+                            <div class="category-item">
+                                <span>Home & Kitchen</span>
+                                <span class="category-percentage">15%</span>
+                            </div>
+                            <div class="category-item">
+                                <span>Books</span>
+                                <span class="category-percentage">12%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="report-card">
+                        <h3>User Growth</h3>
+                        <div class="report-metric">
+                            <span class="metric-value">12,450</span>
+                            <span class="metric-label">Total Users</span>
+                            <span class="metric-change positive">+5%</span>
+                        </div>
+                        <div class="user-breakdown">
+                            <div class="breakdown-item">
+                                <span>Customers: 11,890</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span>Sellers: 560</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="report-card">
+                        <h3>Order Statistics</h3>
+                        <div class="stats-list">
+                            <div class="stat-item">
+                                <span class="stat-label">Average Order Value</span>
+                                <span class="stat-value">$87.50</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Orders Per Day</span>
+                                <span class="stat-value">108</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Return Rate</span>
+                                <span class="stat-value">2.3%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

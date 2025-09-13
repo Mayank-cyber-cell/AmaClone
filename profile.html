@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Account - AmaClone</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <a href="index.html">AmaClone</a>
+                    </div>
+                    
+                    <div class="location-selector">
+                        <span class="location-icon">📍</span>
+                        <div class="location-text">
+                            <span class="deliver-to">Deliver to</span>
+                            <span class="location-name">New York 10001</span>
+                        </div>
+                    </div>
+                    
+                    <div class="search-bar">
+                        <select class="category-selector">
+                            <option>All</option>
+                            <option>Electronics</option>
+                            <option>Fashion</option>
+                            <option>Home</option>
+                            <option>Books</option>
+                        </select>
+                        <input type="text" placeholder="Search products...">
+                        <button type="submit" class="search-btn">🔍</button>
+                    </div>
+                    
+                    <div class="header-actions">
+                        <a href="profile.html" class="account-menu active">
+                            <span class="greeting">Hello, John</span>
+                            <span class="account-text">Account & Lists</span>
+                        </a>
+                        
+                        <a href="orders.html" class="orders-link">
+                            <span class="returns">Returns</span>
+                            <span class="orders">& Orders</span>
+                        </a>
+                        
+                        <a href="cart.html" class="cart-link">
+                            <div class="cart-icon">
+                                🛒
+                                <span class="cart-count">0</span>
+                            </div>
+                            <span class="cart-text">Cart</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="header-nav">
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-link">📱 All</a></li>
+                    <li><a href="category.html" class="nav-link">Today's Deals</a></li>
+                    <li><a href="category.html" class="nav-link">Customer Service</a></li>
+                    <li><a href="category.html" class="nav-link">Registry</a></li>
+                    <li><a href="category.html" class="nav-link">Gift Cards</a></li>
+                    <li><a href="seller-dashboard.html" class="nav-link">Sell</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="profile-page">
+        <div class="container">
+            <div class="profile-header">
+                <h1>Your Account</h1>
+                <p>Manage your account information and preferences</p>
+            </div>
+            
+            <div class="account-sections">
+                <!-- Orders Section -->
+                <div class="account-card">
+                    <div class="card-icon">📦</div>
+                    <div class="card-content">
+                        <h3><a href="orders.html">Your Orders</a></h3>
+                        <p>Track, return, or buy things again</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </div>
+                
+                <!-- Login & Security -->
+                <div class="account-card">
+                    <div class="card-icon">🔐</div>
+                    <div class="card-content">
+                        <h3><a href="#" onclick="showLoginSecurity()">Login & Security</a></h3>
+                        <p>Edit login, name, and mobile number</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </div>
+                
+                <!-- Prime Membership -->
+                <div class="account-card">
+                    <div class="card-icon">⭐</div>
+                    <div class="card-content">
+                        <h3><a href="#">Prime Membership</a></h3>
+                        <p>View benefits and manage membership</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </div>
+                
+                <!-- Your Addresses -->
+                <div class="account-card">
+                    <div class="card-icon">📍</div>
+                    <div class="card-content">
+                        <h3><a href="#" onclick="showAddresses()">Your Addresses</a></h3>
+                        <p>Edit addresses for orders and gifts</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </div>
+                
+                <!-- Payment Methods -->
+                <div class="account-card">
+                    <div class="card-icon">💳</div>
+                    <div class="card-content">
+                        <h3><a href="#" onclick="showPaymentMethods()">Your Payments</a></h3>
+                        <p>View all transactions, manage payment methods</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </div>
+                
+                <!-- Digital Content -->
+                <div class="account-card">
+                    <div class="card-icon">📱</div>
+                    <div class="card-content">
+                        <h3><a href="#">Digital Content & Devices</a></h3>
+                        <p>Manage apps, content and devices</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </div>
+                
+                <!-- Preferences -->
+                <div class="account-card">
+                    <div class="card-icon">⚙️</div>
+                    <div class="card-content">
+                        <h3><a href="#" onclick="showPreferences()">Your Preferences</a></h3>
+                        <p>Change language, notification settings</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </div>
+                
+                <!-- Customer Service -->
+                <div class="account-card">
+                    <div class="card-icon">❓</div>
+                    <div class="card-content">
+                        <h3><a href="help.html">Customer Service</a></h3>
+                        <p>Browse help topics or contact us</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Login & Security Modal -->
+    <div id="login-security-modal" class="modal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h2>Login & Security</h2>
+                <span class="close" onclick="closeModal('login-security-modal')">&times;</span>
+            </div>
+            
+            <div class="security-sections">
+                <div class="security-section">
+                    <h3>Account & Login Info</h3>
+                    
+                    <div class="security-item">
+                        <div class="item-info">
+                            <span class="item-label">Name:</span>
+                            <span class="item-value">John Doe</span>
+                        </div>
+                        <button class="edit-btn" onclick="editField('name')">Edit</button>
+                    </div>
+                    
+                    <div class="security-item">
+                        <div class="item-info">
+                            <span class="item-label">Email:</span>
+                            <span class="item-value">john.doe@email.com</span>
+                        </div>
+                        <button class="edit-btn" onclick="editField('email')">Edit</button>
+                    </div>
+                    
+                    <div class="security-item">
+                        <div class="item-info">
+                            <span class="item-label">Mobile number:</span>
+                            <span class="item-value">+1 (555) 123-4567</span>
+                        </div>
+                        <button class="edit-btn" onclick="editField('phone')">Edit</button>
+                    </div>
+                    
+                    <div class="security-item">
+                        <div class="item-info">
+                            <span class="item-label">Password:</span>
+                            <span class="item-value">••••••••</span>
+                        </div>
+                        <button class="edit-btn" onclick="editField('password')">Edit</button>
+                    </div>
+                </div>
+                
+                <div class="security-section">
+                    <h3>Two-Factor Authentication</h3>
+                    
+                    <div class="security-item">
+                        <div class="item-info">
+                            <span class="item-label">Two-step verification:</span>
+                            <span class="item-value status-off">Off</span>
+                        </div>
+                        <button class="enable-btn" onclick="enableTwoFactor()">Turn On</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Addresses Modal -->
+    <div id="addresses-modal" class="modal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h2>Your Addresses</h2>
+                <span class="close" onclick="closeModal('addresses-modal')">&times;</span>
+            </div>
+            
+            <div class="addresses-content">
+                <button class="add-address-btn" onclick="addNewAddress()">+ Add a new address</button>
+                
+                <div class="addresses-list">
+                    <div class="address-card">
+                        <div class="address-info">
+                            <h4>John Doe</h4>
+                            <p>123 Main Street<br>
+                            New York, NY 10001<br>
+                            United States</p>
+                            <p>Phone: (555) 123-4567</p>
+                            <span class="address-label default">Default</span>
+                        </div>
+                        <div class="address-actions">
+                            <button class="edit-btn">Edit</button>
+                            <button class="remove-btn">Remove</button>
+                            <button class="default-btn disabled">Set as Default</button>
+                        </div>
+                    </div>
+                    
+                    <div class="address-card">
+                        <div class="address-info">
+                            <h4>John Doe</h4>
+                            <p>456 Oak Avenue<br>
+                            Brooklyn, NY 11201<br>
+                            United States</p>
+                            <p>Phone: (555) 123-4567</p>
+                        </div>
+                        <div class="address-actions">
+                            <button class="edit-btn">Edit</button>
+                            <button class="remove-btn">Remove</button>
+                            <button class="default-btn">Set as Default</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Methods Modal -->
+    <div id="payment-methods-modal" class="modal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h2>Your Payment Methods</h2>
+                <span class="close" onclick="closeModal('payment-methods-modal')">&times;</span>
+            </div>
+            
+            <div class="payment-methods-content">
+                <button class="add-payment-btn" onclick="addPaymentMethod()">+ Add a payment method</button>
+                
+                <div class="payment-methods-list">
+                    <div class="payment-card">
+                        <div class="card-info">
+                            <div class="card-icon">💳</div>
+                            <div class="card-details">
+                                <h4>Visa ending in 1234</h4>
+                                <p>Expires 12/2028</p>
+                                <span class="card-label default">Default</span>
+                            </div>
+                        </div>
+                        <div class="card-actions">
+                            <button class="edit-btn">Edit</button>
+                            <button class="remove-btn">Remove</button>
+                            <button class="default-btn disabled">Set as Default</button>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-card">
+                        <div class="card-info">
+                            <div class="card-icon">💳</div>
+                            <div class="card-details">
+                                <h4>Mastercard ending in 5678</h4>
+                                <p>Expires 08/2026</p>
+                            </div>
+                        </div>
+                        <div class="card-actions">
+                            <button class="edit-btn">Edit</button>
+                            <button class="remove-btn">Remove</button>
+                            <button class="default-btn">Set as Default</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Preferences Modal -->
+    <div id="preferences-modal" class="modal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h2>Your Preferences</h2>
+                <span class="close" onclick="closeModal('preferences-modal')">&times;</span>
+            </div>
+            
+            <div class="preferences-content">
+                <div class="preference-section">
+                    <h3>Language Settings</h3>
+                    <div class="preference-item">
+                        <label>Language:</label>
+                        <select class="preference-select">
+                            <option>English</option>
+                            <option>Spanish</option>
+                            <option>French</option>
+                            <option>German</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="preference-section">
+                    <h3>Notification Preferences</h3>
+                    <div class="preference-item">
+                        <label>
+                            <input type="checkbox" checked> Email notifications for order updates
+                        </label>
+                    </div>
+                    <div class="preference-item">
+                        <label>
+                            <input type="checkbox" checked> SMS notifications for deliveries
+                        </label>
+                    </div>
+                    <div class="preference-item">
+                        <label>
+                            <input type="checkbox"> Promotional emails
+                        </label>
+                    </div>
+                    <div class="preference-item">
+                        <label>
+                            <input type="checkbox"> Product recommendations
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="preference-section">
+                    <h3>Privacy Settings</h3>
+                    <div class="preference-item">
+                        <label>
+                            <input type="checkbox" checked> Personalized ads
+                        </label>
+                    </div>
+                    <div class="preference-item">
+                        <label>
+                            <input type="checkbox"> Share browsing history for recommendations
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="modal-actions">
+                    <button class="save-preferences-btn">Save Preferences</button>
+                    <button class="cancel-btn" onclick="closeModal('preferences-modal')">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-columns">
+                    <div class="footer-column">
+                        <h4>Get to Know Us</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press Releases</a></li>
+                            <li><a href="#">Investor Relations</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Make Money with Us</h4>
+                        <ul>
+                            <li><a href="seller-dashboard.html">Sell Products</a></li>
+                            <li><a href="#">Become an Affiliate</a></li>
+                            <li><a href="#">Advertise Your Products</a></li>
+                            <li><a href="#">Self-Publish with Us</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Customer Service</h4>
+                        <ul>
+                            <li><a href="help.html">Help Center</a></li>
+                            <li><a href="#">Returns & Refunds</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="#">Shipping Info</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Connect with Us</h4>
+                        <ul>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">YouTube</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-links">
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+                <p>&copy; 2025 AmaClone. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

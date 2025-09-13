@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - AmaClone</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Simplified Header for Checkout -->
+    <header class="checkout-header">
+        <div class="container">
+            <div class="checkout-logo">
+                <a href="index.html">AmaClone</a>
+            </div>
+            <div class="checkout-security">
+                <span>🔒 Secure Checkout</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Progress Bar -->
+    <div class="checkout-progress">
+        <div class="container">
+            <div class="progress-bar">
+                <div class="progress-step active" data-step="1">
+                    <span class="step-number">1</span>
+                    <span class="step-title">Address</span>
+                </div>
+                <div class="progress-step" data-step="2">
+                    <span class="step-number">2</span>
+                    <span class="step-title">Delivery</span>
+                </div>
+                <div class="progress-step" data-step="3">
+                    <span class="step-number">3</span>
+                    <span class="step-title">Payment</span>
+                </div>
+                <div class="progress-step" data-step="4">
+                    <span class="step-number">4</span>
+                    <span class="step-title">Review</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Checkout Content -->
+    <main class="checkout-page">
+        <div class="container">
+            <div class="checkout-layout">
+                <!-- Checkout Steps -->
+                <div class="checkout-steps">
+                    <!-- Step 1: Address -->
+                    <div id="step-1" class="checkout-step active">
+                        <div class="step-header">
+                            <h2>1. Choose a shipping address</h2>
+                        </div>
+                        
+                        <div class="address-section">
+                            <div class="address-options">
+                                <div class="address-option">
+                                    <input type="radio" id="address-1" name="address" value="1" checked>
+                                    <label for="address-1">
+                                        <div class="address-card">
+                                            <h4>John Doe</h4>
+                                            <p>123 Main Street<br>
+                                            New York, NY 10001<br>
+                                            United States</p>
+                                            <p>Phone: (555) 123-4567</p>
+                                        </div>
+                                    </label>
+                                    <button class="edit-address-btn">Edit address</button>
+                                </div>
+                                
+                                <div class="add-new-address">
+                                    <button class="add-address-btn" onclick="showAddressForm()">+ Add a new address</button>
+                                </div>
+                            </div>
+                            
+                            <div id="new-address-form" class="address-form hidden">
+                                <h4>Add a new address</h4>
+                                <form>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label>Full name</label>
+                                            <input type="text" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Phone number</label>
+                                            <input type="tel" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label>Address line 1</label>
+                                        <input type="text" placeholder="Street address, P.O. box, company name" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label>Address line 2 (optional)</label>
+                                        <input type="text" placeholder="Apartment, suite, unit, building, floor, etc.">
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label>City</label>
+                                            <input type="text" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>State</label>
+                                            <select required>
+                                                <option value="">Select state</option>
+                                                <option value="NY">New York</option>
+                                                <option value="CA">California</option>
+                                                <option value="TX">Texas</option>
+                                                <option value="FL">Florida</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>ZIP Code</label>
+                                            <input type="text" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-actions">
+                                        <button type="submit" class="save-address-btn">Save address</button>
+                                        <button type="button" class="cancel-btn" onclick="hideAddressForm()">Cancel</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        
+                        <div class="step-actions">
+                            <button class="continue-btn" onclick="nextStep(2)">Use this address</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2: Delivery Options -->
+                    <div id="step-2" class="checkout-step">
+                        <div class="step-header">
+                            <h2>2. Choose your delivery options</h2>
+                        </div>
+                        
+                        <div class="delivery-section">
+                            <div class="delivery-options">
+                                <div class="delivery-option">
+                                    <input type="radio" id="delivery-1" name="delivery" value="standard" checked>
+                                    <label for="delivery-1">
+                                        <div class="delivery-card">
+                                            <div class="delivery-info">
+                                                <h4>Standard Delivery</h4>
+                                                <p>FREE - Delivery by Tuesday, January 30</p>
+                                                <p class="delivery-note">Order within 11 hours 30 minutes</p>
+                                            </div>
+                                            <div class="delivery-price">FREE</div>
+                                        </div>
+                                    </label>
+                                </div>
+                                
+                                <div class="delivery-option">
+                                    <input type="radio" id="delivery-2" name="delivery" value="express">
+                                    <label for="delivery-2">
+                                        <div class="delivery-card">
+                                            <div class="delivery-info">
+                                                <h4>Express Delivery</h4>
+                                                <p>Get it by tomorrow, January 28</p>
+                                                <p class="delivery-note">Order within 11 hours 30 minutes</p>
+                                            </div>
+                                            <div class="delivery-price">$9.99</div>
+                                        </div>
+                                    </label>
+                                </div>
+                                
+                                <div class="delivery-option">
+                                    <input type="radio" id="delivery-3" name="delivery" value="same-day">
+                                    <label for="delivery-3">
+                                        <div class="delivery-card">
+                                            <div class="delivery-info">
+                                                <h4>Same-Day Delivery</h4>
+                                                <p>Get it today by 10 PM</p>
+                                                <p class="delivery-note">Order within 5 hours</p>
+                                            </div>
+                                            <div class="delivery-price">$19.99</div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step-actions">
+                            <button class="back-btn" onclick="previousStep(1)">← Back</button>
+                            <button class="continue-btn" onclick="nextStep(3)">Continue</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3: Payment Method -->
+                    <div id="step-3" class="checkout-step">
+                        <div class="step-header">
+                            <h2>3. Select a payment method</h2>
+                        </div>
+                        
+                        <div class="payment-section">
+                            <div class="payment-options">
+                                <div class="payment-option">
+                                    <input type="radio" id="payment-card" name="payment" value="card" checked>
+                                    <label for="payment-card">
+                                        <div class="payment-card">
+                                            <h4>💳 Credit or Debit Card</h4>
+                                        </div>
+                                    </label>
+                                </div>
+                                
+                                <div id="card-form" class="payment-form">
+                                    <div class="form-group">
+                                        <label>Card number</label>
+                                        <input type="text" placeholder="1234 5678 9012 3456" maxlength="19">
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label>Expiry date</label>
+                                            <input type="text" placeholder="MM/YY" maxlength="5">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>CVV</label>
+                                            <input type="text" placeholder="123" maxlength="4">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label>Name on card</label>
+                                        <input type="text" placeholder="John Doe">
+                                    </div>
+                                </div>
+                                
+                                <div class="payment-option">
+                                    <input type="radio" id="payment-paypal" name="payment" value="paypal">
+                                    <label for="payment-paypal">
+                                        <div class="payment-card">
+                                            <h4>PayPal</h4>
+                                            <p>Pay with your PayPal account</p>
+                                        </div>
+                                    </label>
+                                </div>
+                                
+                                <div class="payment-option">
+                                    <input type="radio" id="payment-cod" name="payment" value="cod">
+                                    <label for="payment-cod">
+                                        <div class="payment-card">
+                                            <h4>💵 Cash on Delivery</h4>
+                                            <p>Pay when you receive your order</p>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step-actions">
+                            <button class="back-btn" onclick="previousStep(2)">← Back</button>
+                            <button class="continue-btn" onclick="nextStep(4)">Continue</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4: Review Order -->
+                    <div id="step-4" class="checkout-step">
+                        <div class="step-header">
+                            <h2>4. Review your order</h2>
+                        </div>
+                        
+                        <div class="order-review">
+                            <div class="review-section">
+                                <h3>Shipping Address</h3>
+                                <div class="review-item">
+                                    <p><strong>John Doe</strong><br>
+                                    123 Main Street<br>
+                                    New York, NY 10001<br>
+                                    Phone: (555) 123-4567</p>
+                                    <button class="change-btn" onclick="goToStep(1)">Change</button>
+                                </div>
+                            </div>
+                            
+                            <div class="review-section">
+                                <h3>Delivery Option</h3>
+                                <div class="review-item">
+                                    <p><strong>Standard Delivery</strong><br>
+                                    FREE - Delivery by Tuesday, January 30</p>
+                                    <button class="change-btn" onclick="goToStep(2)">Change</button>
+                                </div>
+                            </div>
+                            
+                            <div class="review-section">
+                                <h3>Payment Method</h3>
+                                <div class="review-item">
+                                    <p><strong>Credit Card</strong><br>
+                                    Ending in 3456</p>
+                                    <button class="change-btn" onclick="goToStep(3)">Change</button>
+                                </div>
+                            </div>
+                            
+                            <div class="review-section">
+                                <h3>Order Items</h3>
+                                <div class="order-items">
+                                    <div class="order-item">
+                                        <img src="https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Product">
+                                        <div class="item-info">
+                                            <h4>Wireless Bluetooth Headphones</h4>
+                                            <p>Quantity: 1</p>
+                                        </div>
+                                        <div class="item-price">$79.99</div>
+                                    </div>
+                                    
+                                    <div class="order-item">
+                                        <img src="https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Product">
+                                        <div class="item-info">
+                                            <h4>Smart Watch Series 8</h4>
+                                            <p>Quantity: 1</p>
+                                        </div>
+                                        <div class="item-price">$299.99</div>
+                                    </div>
+                                    
+                                    <div class="order-item">
+                                        <img src="https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Product">
+                                        <div class="item-info">
+                                            <h4>Laptop Backpack</h4>
+                                            <p>Quantity: 1</p>
+                                        </div>
+                                        <div class="item-price">$49.99</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step-actions">
+                            <button class="back-btn" onclick="previousStep(3)">← Back</button>
+                            <button class="place-order-btn" onclick="placeOrder()">Place your order</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Order Summary Sidebar -->
+                <div class="order-summary">
+                    <div class="summary-card">
+                        <h3>Order Summary</h3>
+                        
+                        <div class="summary-row">
+                            <span>Items (3):</span>
+                            <span>$429.97</span>
+                        </div>
+                        
+                        <div class="summary-row">
+                            <span>Shipping & handling:</span>
+                            <span id="shipping-cost">FREE</span>
+                        </div>
+                        
+                        <div class="summary-row">
+                            <span>Tax:</span>
+                            <span>$34.40</span>
+                        </div>
+                        
+                        <div class="summary-divider"></div>
+                        
+                        <div class="summary-row total">
+                            <span><strong>Order total:</strong></span>
+                            <span><strong id="total-amount">$464.37</strong></span>
+                        </div>
+                        
+                        <div class="summary-note">
+                            <p>🔒 Your payment is secure and encrypted</p>
+                            <p>📦 Free returns within 30 days</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

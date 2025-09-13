@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireless Bluetooth Headphones - AmaClone</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <a href="index.html">AmaClone</a>
+                    </div>
+                    
+                    <div class="location-selector">
+                        <span class="location-icon">📍</span>
+                        <div class="location-text">
+                            <span class="deliver-to">Deliver to</span>
+                            <span class="location-name">New York 10001</span>
+                        </div>
+                    </div>
+                    
+                    <div class="search-bar">
+                        <select class="category-selector">
+                            <option>All</option>
+                            <option>Electronics</option>
+                            <option>Fashion</option>
+                            <option>Home</option>
+                            <option>Books</option>
+                        </select>
+                        <input type="text" placeholder="Search products...">
+                        <button type="submit" class="search-btn">🔍</button>
+                    </div>
+                    
+                    <div class="header-actions">
+                        <a href="login.html" class="account-menu">
+                            <span class="greeting">Hello, Sign in</span>
+                            <span class="account-text">Account & Lists</span>
+                        </a>
+                        
+                        <a href="orders.html" class="orders-link">
+                            <span class="returns">Returns</span>
+                            <span class="orders">& Orders</span>
+                        </a>
+                        
+                        <a href="cart.html" class="cart-link">
+                            <div class="cart-icon">
+                                🛒
+                                <span class="cart-count">0</span>
+                            </div>
+                            <span class="cart-text">Cart</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="header-nav">
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-link">📱 All</a></li>
+                    <li><a href="category.html" class="nav-link">Today's Deals</a></li>
+                    <li><a href="category.html" class="nav-link">Customer Service</a></li>
+                    <li><a href="category.html" class="nav-link">Registry</a></li>
+                    <li><a href="category.html" class="nav-link">Gift Cards</a></li>
+                    <li><a href="seller-dashboard.html" class="nav-link">Sell</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> &gt; 
+            <a href="category.html">Electronics</a> &gt; 
+            <a href="category.html">Headphones</a> &gt; 
+            <span>Wireless Bluetooth Headphones</span>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="product-page">
+        <div class="container">
+            <div class="product-layout">
+                <!-- Product Images -->
+                <div class="product-images">
+                    <div class="main-image">
+                        <img id="mainProductImage" src="https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Wireless Bluetooth Headphones">
+                    </div>
+                    <div class="thumbnail-images">
+                        <img src="https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?auto=compress&cs=tinysrgb&w=100" alt="View 1" onclick="changeImage(this)" class="active-thumbnail">
+                        <img src="https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&w=100" alt="View 2" onclick="changeImage(this)">
+                        <img src="https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=100" alt="View 3" onclick="changeImage(this)">
+                        <img src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=100" alt="View 4" onclick="changeImage(this)">
+                    </div>
+                </div>
+                
+                <!-- Product Info -->
+                <div class="product-info">
+                    <h1>Premium Wireless Bluetooth Headphones - Noise Cancelling Over-Ear Headphones with Microphone</h1>
+                    
+                    <div class="product-rating">
+                        <div class="rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-count">4.5 out of 5</span>
+                            <span class="review-count">(1,234 reviews)</span>
+                        </div>
+                        <a href="#reviews">See all reviews</a>
+                    </div>
+                    
+                    <div class="price-section">
+                        <div class="price-row">
+                            <span class="deal-badge">Limited time deal</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="current-price">$79.99</span>
+                            <span class="original-price">$129.99</span>
+                            <span class="discount">38% off</span>
+                        </div>
+                        <div class="price-details">
+                            <span>FREE Returns</span>
+                            <span>FREE delivery</span>
+                        </div>
+                    </div>
+                    
+                    <div class="product-variants">
+                        <div class="variant-group">
+                            <h4>Color:</h4>
+                            <div class="color-options">
+                                <button class="color-option active" data-color="black" style="background: #000"></button>
+                                <button class="color-option" data-color="white" style="background: #fff; border: 1px solid #ddd"></button>
+                                <button class="color-option" data-color="blue" style="background: #4a90e2"></button>
+                                <button class="color-option" data-color="red" style="background: #e74c3c"></button>
+                            </div>
+                        </div>
+                        
+                        <div class="variant-group">
+                            <h4>Size:</h4>
+                            <select class="size-select">
+                                <option>Standard</option>
+                                <option>Large</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="product-highlights">
+                        <h4>About this item</h4>
+                        <ul>
+                            <li>Active Noise Cancellation for immersive sound</li>
+                            <li>40-hour battery life with quick charge</li>
+                            <li>Premium comfort and fit</li>
+                            <li>Built-in microphone for clear calls</li>
+                            <li>Wireless and wired connectivity options</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Purchase Options -->
+                <div class="purchase-section">
+                    <div class="purchase-card">
+                        <div class="price-display">
+                            <span class="current-price">$79.99</span>
+                        </div>
+                        
+                        <div class="shipping-info">
+                            <p><strong>FREE delivery</strong> Tuesday, January 30</p>
+                            <p>Order within <span class="time-left">11 hrs 30 mins</span></p>
+                        </div>
+                        
+                        <div class="stock-info">
+                            <span class="in-stock">✓ In Stock</span>
+                        </div>
+                        
+                        <div class="quantity-selector">
+                            <label for="quantity">Qty:</label>
+                            <select id="quantity">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        
+                        <div class="purchase-buttons">
+                            <button class="add-to-cart-btn" onclick="addToCart(1)">Add to Cart</button>
+                            <button class="buy-now-btn" onclick="buyNow()">Buy Now</button>
+                        </div>
+                        
+                        <div class="additional-options">
+                            <button class="wishlist-btn" onclick="addToWishlist(1)">❤️ Add to Wish List</button>
+                        </div>
+                        
+                        <div class="security-info">
+                            <p>🔒 Secure transaction</p>
+                            <p>Ships from AmaClone</p>
+                            <p>Sold by Electronics Pro</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product Details Tabs -->
+            <div class="product-details-tabs">
+                <div class="tab-nav">
+                    <button class="tab-btn active" onclick="showTab('description')">Description</button>
+                    <button class="tab-btn" onclick="showTab('specifications')">Specifications</button>
+                    <button class="tab-btn" onclick="showTab('reviews')">Reviews</button>
+                    <button class="tab-btn" onclick="showTab('qa')">Q&A</button>
+                </div>
+                
+                <div class="tab-content">
+                    <div id="description" class="tab-panel active">
+                        <h3>Product Description</h3>
+                        <p>Experience superior sound quality with these premium wireless Bluetooth headphones. Featuring advanced noise cancellation technology, these over-ear headphones deliver crisp, clear audio whether you're listening to music, taking calls, or enjoying podcasts.</p>
+                        
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li><strong>Active Noise Cancellation:</strong> Block out ambient noise for immersive listening</li>
+                            <li><strong>40-Hour Battery Life:</strong> Extended playtime with quick charge capability</li>
+                            <li><strong>Premium Comfort:</strong> Soft ear cushions and adjustable headband</li>
+                            <li><strong>Universal Compatibility:</strong> Works with all Bluetooth devices</li>
+                            <li><strong>Built-in Controls:</strong> Easy access to volume, track, and call controls</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="specifications" class="tab-panel">
+                        <h3>Technical Specifications</h3>
+                        <table class="specs-table">
+                            <tr><td>Brand</td><td>AudioTech Pro</td></tr>
+                            <tr><td>Model</td><td>AT-BT500</td></tr>
+                            <tr><td>Connectivity</td><td>Bluetooth 5.0, 3.5mm jack</td></tr>
+                            <tr><td>Battery Life</td><td>40 hours</td></tr>
+                            <tr><td>Charging Time</td><td>2 hours</td></tr>
+                            <tr><td>Weight</td><td>250g</td></tr>
+                            <tr><td>Frequency Response</td><td>20Hz - 20kHz</td></tr>
+                            <tr><td>Impedance</td><td>32 ohms</td></tr>
+                            <tr><td>Driver Size</td><td>40mm</td></tr>
+                        </table>
+                    </div>
+                    
+                    <div id="reviews" class="tab-panel">
+                        <h3>Customer Reviews</h3>
+                        <div class="review-summary">
+                            <div class="overall-rating">
+                                <span class="rating-number">4.5</span>
+                                <span class="stars">⭐⭐⭐⭐⭐</span>
+                                <span class="review-count">1,234 reviews</span>
+                            </div>
+                            <div class="rating-breakdown">
+                                <div class="rating-bar">
+                                    <span>5 star</span>
+                                    <div class="bar"><div class="fill" style="width: 70%"></div></div>
+                                    <span>70%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>4 star</span>
+                                    <div class="bar"><div class="fill" style="width: 20%"></div></div>
+                                    <span>20%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>3 star</span>
+                                    <div class="bar"><div class="fill" style="width: 7%"></div></div>
+                                    <span>7%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>2 star</span>
+                                    <div class="bar"><div class="fill" style="width: 2%"></div></div>
+                                    <span>2%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>1 star</span>
+                                    <div class="bar"><div class="fill" style="width: 1%"></div></div>
+                                    <span>1%</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="review-list">
+                            <div class="review-item">
+                                <div class="reviewer-info">
+                                    <span class="reviewer-name">John D.</span>
+                                    <span class="review-date">January 15, 2025</span>
+                                </div>
+                                <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                                <h4>Amazing sound quality!</h4>
+                                <p>These headphones exceeded my expectations. The noise cancellation works perfectly and the battery life is incredible. Highly recommended!</p>
+                                <div class="review-helpful">
+                                    <span>Helpful?</span>
+                                    <button>👍 Yes (12)</button>
+                                    <button>👎 No (1)</button>
+                                </div>
+                            </div>
+                            
+                            <div class="review-item">
+                                <div class="reviewer-info">
+                                    <span class="reviewer-name">Sarah M.</span>
+                                    <span class="review-date">January 10, 2025</span>
+                                </div>
+                                <div class="review-rating">⭐⭐⭐⭐</div>
+                                <h4>Great value for money</h4>
+                                <p>Very comfortable to wear for long periods. The sound quality is excellent for the price point. Only minor issue is the case could be more compact.</p>
+                                <div class="review-helpful">
+                                    <span>Helpful?</span>
+                                    <button>👍 Yes (8)</button>
+                                    <button>👎 No (0)</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="qa" class="tab-panel">
+                        <h3>Questions & Answers</h3>
+                        <div class="qa-section">
+                            <div class="qa-item">
+                                <h4>Q: Are these compatible with iPhone?</h4>
+                                <p><strong>A:</strong> Yes, these headphones are compatible with all Bluetooth devices including iPhone, Android, and tablets. They also come with a 3.5mm cable for wired connection.</p>
+                                <span class="qa-date">Answered on January 12, 2025</span>
+                            </div>
+                            
+                            <div class="qa-item">
+                                <h4>Q: How long does the battery last?</h4>
+                                <p><strong>A:</strong> The battery provides up to 40 hours of continuous playback with noise cancellation off, and about 30 hours with noise cancellation on.</p>
+                                <span class="qa-date">Answered on January 8, 2025</span>
+                            </div>
+                            
+                            <div class="qa-item">
+                                <h4>Q: Can I use these for phone calls?</h4>
+                                <p><strong>A:</strong> Absolutely! These headphones have a built-in microphone with noise reduction for clear phone calls.</p>
+                                <span class="qa-date">Answered on January 5, 2025</span>
+                            </div>
+                        </div>
+                        
+                        <div class="ask-question">
+                            <button class="ask-btn">Ask a Question</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-columns">
+                    <div class="footer-column">
+                        <h4>Get to Know Us</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press Releases</a></li>
+                            <li><a href="#">Investor Relations</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Make Money with Us</h4>
+                        <ul>
+                            <li><a href="seller-dashboard.html">Sell Products</a></li>
+                            <li><a href="#">Become an Affiliate</a></li>
+                            <li><a href="#">Advertise Your Products</a></li>
+                            <li><a href="#">Self-Publish with Us</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Customer Service</h4>
+                        <ul>
+                            <li><a href="help.html">Help Center</a></li>
+                            <li><a href="#">Returns & Refunds</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="#">Shipping Info</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Connect with Us</h4>
+                        <ul>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">YouTube</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-links">
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+                <p>&copy; 2025 AmaClone. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

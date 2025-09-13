@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronics - AmaClone</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <a href="index.html">AmaClone</a>
+                    </div>
+                    
+                    <div class="location-selector">
+                        <span class="location-icon">📍</span>
+                        <div class="location-text">
+                            <span class="deliver-to">Deliver to</span>
+                            <span class="location-name">New York 10001</span>
+                        </div>
+                    </div>
+                    
+                    <div class="search-bar">
+                        <select class="category-selector">
+                            <option>All</option>
+                            <option selected>Electronics</option>
+                            <option>Fashion</option>
+                            <option>Home</option>
+                            <option>Books</option>
+                        </select>
+                        <input type="text" placeholder="Search electronics...">
+                        <button type="submit" class="search-btn">🔍</button>
+                    </div>
+                    
+                    <div class="header-actions">
+                        <a href="login.html" class="account-menu">
+                            <span class="greeting">Hello, Sign in</span>
+                            <span class="account-text">Account & Lists</span>
+                        </a>
+                        
+                        <a href="orders.html" class="orders-link">
+                            <span class="returns">Returns</span>
+                            <span class="orders">& Orders</span>
+                        </a>
+                        
+                        <a href="cart.html" class="cart-link">
+                            <div class="cart-icon">
+                                🛒
+                                <span class="cart-count">0</span>
+                            </div>
+                            <span class="cart-text">Cart</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="header-nav">
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-link">📱 All</a></li>
+                    <li><a href="category.html" class="nav-link">Today's Deals</a></li>
+                    <li><a href="category.html" class="nav-link">Customer Service</a></li>
+                    <li><a href="category.html" class="nav-link">Registry</a></li>
+                    <li><a href="category.html" class="nav-link">Gift Cards</a></li>
+                    <li><a href="seller-dashboard.html" class="nav-link">Sell</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="category-page">
+        <div class="container">
+            <div class="category-layout">
+                <!-- Sidebar Filters -->
+                <aside class="filters-sidebar">
+                    <h3>Filters</h3>
+                    
+                    <div class="filter-group">
+                        <h4>Price</h4>
+                        <div class="price-filter">
+                            <input type="number" placeholder="Min" class="price-input">
+                            <span>to</span>
+                            <input type="number" placeholder="Max" class="price-input">
+                            <button class="apply-price-btn">Go</button>
+                        </div>
+                        <div class="price-ranges">
+                            <label><input type="checkbox"> Under $25</label>
+                            <label><input type="checkbox"> $25 to $50</label>
+                            <label><input type="checkbox"> $50 to $100</label>
+                            <label><input type="checkbox"> $100 to $200</label>
+                            <label><input type="checkbox"> $200 & Above</label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Brand</h4>
+                        <div class="brand-filters">
+                            <label><input type="checkbox"> Apple</label>
+                            <label><input type="checkbox"> Samsung</label>
+                            <label><input type="checkbox"> Sony</label>
+                            <label><input type="checkbox"> LG</label>
+                            <label><input type="checkbox"> Dell</label>
+                            <label><input type="checkbox"> HP</label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Customer Rating</h4>
+                        <div class="rating-filters">
+                            <label><input type="checkbox"> ⭐⭐⭐⭐⭐ & Up</label>
+                            <label><input type="checkbox"> ⭐⭐⭐⭐ & Up</label>
+                            <label><input type="checkbox"> ⭐⭐⭐ & Up</label>
+                            <label><input type="checkbox"> ⭐⭐ & Up</label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Availability</h4>
+                        <div class="availability-filters">
+                            <label><input type="checkbox"> Include Out of Stock</label>
+                        </div>
+                    </div>
+                </aside>
+                
+                <!-- Products Section -->
+                <section class="products-section">
+                    <div class="category-header">
+                        <h1>Electronics</h1>
+                        <div class="results-info">
+                            <span>1-16 of over 1,000 results for "electronics"</span>
+                        </div>
+                        
+                        <div class="sort-options">
+                            <label for="sort">Sort by:</label>
+                            <select id="sort" class="sort-select">
+                                <option>Featured</option>
+                                <option>Price: Low to High</option>
+                                <option>Price: High to Low</option>
+                                <option>Avg. Customer Review</option>
+                                <option>Newest Arrivals</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="products-grid">
+                        <div class="product-card">
+                            <a href="product.html">
+                                <img src="https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Product">
+                                <div class="product-info">
+                                    <h3>Wireless Bluetooth Headphones</h3>
+                                    <div class="rating">
+                                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                                        <span class="rating-count">(1,234)</span>
+                                    </div>
+                                    <div class="price">
+                                        <span class="current-price">$79.99</span>
+                                        <span class="original-price">$129.99</span>
+                                    </div>
+                                    <div class="shipping">FREE Shipping</div>
+                                </div>
+                            </a>
+                            <button class="add-to-cart-btn" onclick="addToCart(1)">Add to Cart</button>
+                        </div>
+                        
+                        <div class="product-card">
+                            <a href="product.html">
+                                <img src="https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Product">
+                                <div class="product-info">
+                                    <h3>Smart Watch Series 8</h3>
+                                    <div class="rating">
+                                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                                        <span class="rating-count">(2,567)</span>
+                                    </div>
+                                    <div class="price">
+                                        <span class="current-price">$299.99</span>
+                                        <span class="original-price">$399.99</span>
+                                    </div>
+                                    <div class="shipping">FREE Shipping</div>
+                                </div>
+                            </a>
+                            <button class="add-to-cart-btn" onclick="addToCart(2)">Add to Cart</button>
+                        </div>
+                        
+                        <div class="product-card">
+                            <a href="product.html">
+                                <img src="https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Product">
+                                <div class="product-info">
+                                    <h3>Wireless Charging Pad</h3>
+                                    <div class="rating">
+                                        <span class="stars">⭐⭐⭐⭐</span>
+                                        <span class="rating-count">(678)</span>
+                                    </div>
+                                    <div class="price">
+                                        <span class="current-price">$29.99</span>
+                                    </div>
+                                    <div class="shipping">FREE Shipping</div>
+                                </div>
+                            </a>
+                            <button class="add-to-cart-btn" onclick="addToCart(5)">Add to Cart</button>
+                        </div>
+                        
+                        <div class="product-card">
+                            <a href="product.html">
+                                <img src="https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Product">
+                                <div class="product-info">
+                                    <h3>Bluetooth Speaker</h3>
+                                    <div class="rating">
+                                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                                        <span class="rating-count">(1,122)</span>
+                                    </div>
+                                    <div class="price">
+                                        <span class="current-price">$89.99</span>
+                                        <span class="original-price">$119.99</span>
+                                    </div>
+                                    <div class="shipping">FREE Shipping</div>
+                                </div>
+                            </a>
+                            <button class="add-to-cart-btn" onclick="addToCart(6)">Add to Cart</button>
+                        </div>
+                        
+                        <div class="product-card">
+                            <a href="product.html">
+                                <img src="https://images.pexels.com/photos/1334597/pexels-photo-1334597.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Product">
+                                <div class="product-info">
+                                    <h3>Gaming Mouse</h3>
+                                    <div class="rating">
+                                        <span class="stars">⭐⭐⭐⭐</span>
+                                        <span class="rating-count">(934)</span>
+                                    </div>
+                                    <div class="price">
+                                        <span class="current-price">$59.99</span>
+                                    </div>
+                                    <div class="shipping">FREE Shipping</div>
+                                </div>
+                            </a>
+                            <button class="add-to-cart-btn" onclick="addToCart(7)">Add to Cart</button>
+                        </div>
+                        
+                        <div class="product-card">
+                            <a href="product.html">
+                                <img src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Product">
+                                <div class="product-info">
+                                    <h3>Desk Lamp LED</h3>
+                                    <div class="rating">
+                                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                                        <span class="rating-count">(456)</span>
+                                    </div>
+                                    <div class="price">
+                                        <span class="current-price">$39.99</span>
+                                        <span class="original-price">$59.99</span>
+                                    </div>
+                                    <div class="shipping">FREE Shipping</div>
+                                </div>
+                            </a>
+                            <button class="add-to-cart-btn" onclick="addToCart(8)">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <button class="page-btn disabled">Previous</button>
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">3</button>
+                        <button class="page-btn">4</button>
+                        <button class="page-btn">5</button>
+                        <span>...</span>
+                        <button class="page-btn">Next</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-columns">
+                    <div class="footer-column">
+                        <h4>Get to Know Us</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press Releases</a></li>
+                            <li><a href="#">Investor Relations</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Make Money with Us</h4>
+                        <ul>
+                            <li><a href="seller-dashboard.html">Sell Products</a></li>
+                            <li><a href="#">Become an Affiliate</a></li>
+                            <li><a href="#">Advertise Your Products</a></li>
+                            <li><a href="#">Self-Publish with Us</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Customer Service</h4>
+                        <ul>
+                            <li><a href="help.html">Help Center</a></li>
+                            <li><a href="#">Returns & Refunds</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="#">Shipping Info</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Connect with Us</h4>
+                        <ul>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">YouTube</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-links">
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+                <p>&copy; 2025 AmaClone. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

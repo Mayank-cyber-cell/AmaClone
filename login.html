@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - AmaClone</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="auth-page">
+    <div class="auth-container">
+        <div class="auth-logo">
+            <a href="index.html">AmaClone</a>
+        </div>
+        
+        <div class="auth-card">
+            <h1>Sign in</h1>
+            
+            <form class="auth-form" id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email or mobile phone number</label>
+                    <input type="text" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    <a href="#" class="forgot-password">Forgot your password?</a>
+                </div>
+                
+                <button type="submit" class="auth-btn">Sign In</button>
+            </form>
+            
+            <div class="auth-divider">
+                <span>New to AmaClone?</span>
+            </div>
+            
+            <a href="signup.html" class="auth-link secondary">Create your AmaClone account</a>
+        </div>
+        
+        <div class="auth-footer">
+            <p>By continuing, you agree to AmaClone's <a href="terms.html">Conditions of Use</a> and <a href="privacy.html">Privacy Notice</a>.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

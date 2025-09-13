@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - AmaClone</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="auth-page">
+    <div class="auth-container">
+        <div class="auth-logo">
+            <a href="index.html">AmaClone</a>
+        </div>
+        
+        <div class="auth-card">
+            <h1>Create account</h1>
+            
+            <form class="auth-form" id="signupForm">
+                <div class="form-group">
+                    <label for="name">Your name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Mobile number or email</label>
+                    <input type="text" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    <small>At least 6 characters</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword">Re-enter password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                
+                <button type="submit" class="auth-btn">Create your AmaClone account</button>
+            </form>
+            
+            <div class="auth-divider">
+                <span>Already have an account?</span>
+            </div>
+            
+            <a href="login.html" class="auth-link">Sign in</a>
+        </div>
+        
+        <div class="auth-footer">
+            <p>By creating an account, you agree to AmaClone's <a href="terms.html">Conditions of Use</a> and <a href="privacy.html">Privacy Notice</a>.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
