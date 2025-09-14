@@ -8,7 +8,7 @@ It simulates product listing, cart, authentication pages, and a seller dashboard
 ## 🌟 Features  
 
 ✅ Product & Category pages  
-✅ Cart and Wishlist  
+✅ Cart & Wishlist  
 ✅ User Authentication pages (Login / Signup – front-end only)  
 ✅ Seller Dashboard  
 ✅ Orders, Profile & Checkout  
