@@ -9,7 +9,7 @@ It simulates product listing, cart, authentication pages, and a seller dashboard
 
 ✅ Product & Category pages  
 ✅ Cart & Wishlist  
-✅ User Authentication pages (Login / Signup – front-end only)  
+✅ User Authentication page (Login / Signup – front-end only)  
 ✅ Seller Dashboard  
 ✅ Orders, Profile & Checkout  
 ✅ Static Help, Contact, Privacy & Terms  
@@ -18,7 +18,7 @@ It simulates product listing, cart, authentication pages, and a seller dashboard
 
 ---
 
-## 📂 File Structure  
+### 📂 File Structure  
 
 <details>
 <summary>📁 Expand to view project structure</summary>
