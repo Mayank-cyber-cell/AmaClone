@@ -78,7 +78,7 @@ python3 -m http.server 8000
 
 ---
 
-## 🔮 To Do / Improvements  
+## 🔮 To Do / Improvement 
 
 - 📱 Make the site **fully responsive**  
 - 🔐 Add real **backend** for login & cart persistence  
