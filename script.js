@@ -2,6 +2,7 @@
 let currentSlide = 0;
 let cartItems = [];
 let wishlistItems = [];
+let searchTimeout = null;
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
@@ -56,12 +57,12 @@ function previousSlide() {
 }
 
 // Cart Functions
-function addToCart(productId) {
+function addToCart(productId, event) {
     const product = getProductById(productId);
     if (!product) return;
-    
+
     const existingItem = cartItems.find(item => item.id === productId);
-    
+
     if (existingItem) {
         existingItem.quantity += 1;
     } else {
@@ -71,10 +72,68 @@ function addToCart(productId) {
             quantity: 1
         });
     }
-    
+
     saveCartToStorage();
     updateCartCount();
+
+    if (event && event.target) {
+        animateCartIcon(event.target);
+    }
+
     showNotification('Product added to cart!', 'success');
+}
+
+function animateCartIcon(button) {
+    const cartIcon = document.querySelector('.cart-link');
+    if (!cartIcon) return;
+
+    const buttonRect = button.getBoundingClientRect();
+    const cartRect = cartIcon.getBoundingClientRect();
+
+    const flyingProduct = document.createElement('div');
+    flyingProduct.style.cssText = `
+        position: fixed;
+        left: ${buttonRect.left + buttonRect.width / 2}px;
+        top: ${buttonRect.top + buttonRect.height / 2}px;
+        width: 20px;
+        height: 20px;
+        background: linear-gradient(135deg, #0066CC 0%, #00A8E8 100%);
+        border-radius: 50%;
+        z-index: 9999;
+        pointer-events: none;
+        transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    `;
+
+    document.body.appendChild(flyingProduct);
+
+    setTimeout(() => {
+        flyingProduct.style.left = cartRect.left + cartRect.width / 2 + 'px';
+        flyingProduct.style.top = cartRect.top + cartRect.height / 2 + 'px';
+        flyingProduct.style.transform = 'scale(0)';
+        flyingProduct.style.opacity = '0';
+    }, 10);
+
+    setTimeout(() => {
+        if (flyingProduct.parentNode) {
+            flyingProduct.remove();
+        }
+        cartIcon.style.animation = 'cartBounce 0.5s ease';
+        setTimeout(() => {
+            cartIcon.style.animation = '';
+        }, 500);
+    }, 800);
+
+    const styles = document.createElement('style');
+    styles.textContent = `
+        @keyframes cartBounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+    `;
+    if (!document.querySelector('style[data-cart-animation]')) {
+        styles.setAttribute('data-cart-animation', 'true');
+        document.head.appendChild(styles);
+    }
 }
 
 function removeFromCart(productId) {
@@ -932,11 +991,19 @@ function initializeModalHandlers() {
 
 // Utility Functions
 function showNotification(message, type = 'info') {
-    // Create notification element
     const notification = document.createElement('div');
     notification.className = `notification ${type}`;
+
+    const icons = {
+        success: '✓',
+        error: '✗',
+        warning: '⚠',
+        info: 'ℹ'
+    };
+
     notification.innerHTML = `
         <div class="notification-content">
+            <span class="notification-icon">${icons[type] || icons.info}</span>
             <span class="notification-message">${message}</span>
             <button class="notification-close" onclick="this.parentElement.parentElement.remove()">×</button>
         </div>
@@ -953,34 +1020,41 @@ function showNotification(message, type = 'info') {
                 right: 20px;
                 z-index: 10000;
                 max-width: 400px;
-                padding: 16px;
-                border-radius: 8px;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-                animation: slideIn 0.3s ease-out;
+                padding: 16px 20px;
+                border-radius: 12px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+                animation: slideIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                backdrop-filter: blur(10px);
             }
             
             .notification.success {
-                background: #d4edda;
-                color: #155724;
-                border: 1px solid #c3e6cb;
+                background: linear-gradient(135deg, #06D6A0 0%, #05B886 100%);
+                color: white;
+                border: none;
             }
-            
+
             .notification.error {
-                background: #f8d7da;
-                color: #721c24;
-                border: 1px solid #f5c6cb;
+                background: linear-gradient(135deg, #EF476F 0%, #D63654 100%);
+                color: white;
+                border: none;
             }
-            
+
             .notification.warning {
-                background: #fff3cd;
-                color: #856404;
-                border: 1px solid #ffeaa7;
+                background: linear-gradient(135deg, #FFB800 0%, #E6A500 100%);
+                color: white;
+                border: none;
             }
-            
+
             .notification.info {
-                background: #e7f3ff;
-                color: #0c5460;
-                border: 1px solid #b8daff;
+                background: linear-gradient(135deg, #0066CC 0%, #0052A3 100%);
+                color: white;
+                border: none;
+            }
+
+            .notification-icon {
+                font-size: 20px;
+                font-weight: bold;
+                margin-right: 8px;
             }
             
             .notification-content {
@@ -1010,13 +1084,24 @@ function showNotification(message, type = 'info') {
             }
             
             @keyframes slideIn {
-                from {
-                    transform: translateX(100%);
+                0% {
+                    transform: translateX(400px) scale(0.8);
                     opacity: 0;
                 }
-                to {
-                    transform: translateX(0);
+                100% {
+                    transform: translateX(0) scale(1);
                     opacity: 1;
+                }
+            }
+
+            @keyframes slideOut {
+                0% {
+                    transform: translateX(0) scale(1);
+                    opacity: 1;
+                }
+                100% {
+                    transform: translateX(400px) scale(0.8);
+                    opacity: 0;
                 }
             }
         `;
@@ -1310,6 +1395,60 @@ if ('serviceWorker' in navigator) {
             });
     });
 }
+
+// Scroll to Top functionality
+function initializeScrollToTop() {
+    const scrollButton = document.getElementById('scrollToTop');
+    if (!scrollButton) return;
+
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            scrollButton.classList.add('visible');
+        } else {
+            scrollButton.classList.remove('visible');
+        }
+    });
+
+    scrollButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initializeScrollToTop();
+});
+
+// Add smooth reveal animations on scroll
+function initializeScrollAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    const animateElements = document.querySelectorAll('.product-card, .category-card, .section-title');
+    animateElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(initializeScrollAnimations, 100);
+});
 
 // Export functions for global access
 window.AmaClone = {
