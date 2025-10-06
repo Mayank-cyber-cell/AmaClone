@@ -1,4 +1,4 @@
-bddjdid
+bddjdi
 # 🛒 AmaClone  
 
 > **AmaClone** is a static **front-end clone** of Amazon built with **HTML, CSS & Vanilla JavaScript** ✨  
